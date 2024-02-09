@@ -42,7 +42,7 @@ This repository serves as a hub for sharing insights, best practices, and resour
 
 ## Let's Connect!
 
-I'd love to hear your feedback, suggestions, and contributions. Feel free to reach out or connect with me on [LinkedIn]([https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/jeandjoseph/)).
+I'd love to hear your feedback, suggestions, and contributions. Feel free to reach out or connect with me on [LinkedIn](https://www.linkedin.com/in/jeandjoseph/).
 
 Remember, knowledge grows when shared! 🌟
 
