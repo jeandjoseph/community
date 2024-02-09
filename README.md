@@ -52,13 +52,4 @@ Remember, knowledge grows when shared! 🌟
 
 ---
 
-*This README was crafted with passion and a dash of code by [Your Name](https://github.com/your-username).*
-
-Source: Conversation with Bing, 2/9/2024
-(1) About READMEs - GitHub Docs. https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes.
-(2) How to Write a Good README File for Your GitHub Project - freeCodeCamp.org. https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/.
-(3) Quickstart for writing on GitHub - GitHub Docs. https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github.
-(4) How To Write A Good README File - DEV Community. https://dev.to/boiliev/how-to-write-a-good-readme-file-2c0d.
-(5) How to Create the Perfect README for Your Open Source Project. https://dev.to/github/how-to-create-the-perfect-readme-for-your-open-source-project-1k69.
-(6) How to Write a README File for Your GitHub Project. https://towardsdev.com/how-to-write-a-readme-file-for-your-github-project-b680c71671cb.
-(7) How to write a perfect README for your GitHub project. https://dev.to/mfts/how-to-write-a-perfect-readme-for-your-github-project-59f2.
+*This README was crafted with passion and a dash of code by [Jean Joseph](https://github.com/jeandjoseph).*
