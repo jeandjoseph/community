@@ -1,0 +1,2 @@
+azure_oai_endpoint,azure_oai_key,azure_oai_model,azure_openai_api_type,azure_openai_api_version
+<your endpoint>,<your azure openai key>,<your azure openai model>,<your azure openai api type>,<your azure openai api version>
