@@ -1,5 +1,11 @@
-IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'azureopenai')
+IF EXISTS (SELECT name FROM sys.databases WHERE name = 'azureopenai')
 BEGIN
-    CREATE DATABASE azureopenai;
+    ALTER DATABASE azureopenai SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE azureopenai;
 END
+
+CREATE DATABASE azureopenai;
+GO
+
+USE azureopenai;
 GO

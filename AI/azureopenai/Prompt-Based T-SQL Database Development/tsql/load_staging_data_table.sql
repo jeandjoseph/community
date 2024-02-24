@@ -1,32 +1,32 @@
-CREATE PROCEDURE etl_process.usp_bulk_insert_csv
-    @table_name NVARCHAR(255),
-    @file_path NVARCHAR(255),
-    @error_file_path NVARCHAR(255)
+CREATE PROCEDURE etl_process.usp_BulkInsertFromCSV
+    @tableName NVARCHAR(255),
+    @filePath NVARCHAR(255),
+    @errorFilePath NVARCHAR(255)
 AS
 BEGIN
-    SET NOCOUNT ON;
-
-    DECLARE @process_name NVARCHAR(255) = 'Bulk Insert CSV';
-    DECLARE @process_type NVARCHAR(255) = 'ETL';
-    DECLARE @start_time DATETIME2(7) = GETDATE();
-    DECLARE @end_time DATETIME2(7);
-    DECLARE @error_message NVARCHAR(MAX);
+    DECLARE @startTime DATETIME;
+    DECLARE @endTime DATETIME;
+    DECLARE @errorMsg NVARCHAR(MAX);
 
     BEGIN TRY
-        DECLARE @sql NVARCHAR(MAX);
+        SET @startTime = GETDATE();
 
-        SET @sql = 'BULK INSERT ' + @table_name + ' FROM ''' + @file_path + ''' WITH (FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', ERRORFILE = ''' + @error_file_path + ''')';
+        DECLARE @bulkInsertQuery NVARCHAR(MAX);
+        SET @bulkInsertQuery = 'TRUNCATE TABLE ' + @tableName + '; ' +
+            'BULK INSERT ' + @tableName + ' ' +
+            'FROM ''' + @filePath + ''' ' +
+            'WITH (FIRSTROW = 2, FIELDTERMINATOR = '','', ROWTERMINATOR = ''\n'', ERRORFILE = ''' + @errorFilePath + ''');';
 
-        EXEC sp_executesql @sql;
+        EXEC sp_executesql @bulkInsertQuery;
 
-        SET @end_time = GETDATE();
+        SET @endTime = GETDATE();
 
-        EXEC etl_process.usp_get_process_log @process_name, @process_type, @table_name, @start_time, @end_time;
+        EXEC etl_process.usp_get_process_log 'Bulk Insert', 'T-SQL', @tableName, @startTime, @endTime;
     END TRY
     BEGIN CATCH
-        SET @end_time = GETDATE();
-        SET @error_message = ERROR_MESSAGE();
+        SET @endTime = GETDATE();
+        SET @errorMsg = ERROR_MESSAGE();
 
-        EXEC etl_process.usp_get_error_log @process_name, @table_name, @error_message, @start_time, @end_time;
+        EXEC etl_process.usp_get_error_log 'Bulk Insert', @tableName, @errorMsg, @startTime, @endTime;
     END CATCH;
 END;

@@ -1,4 +1,4 @@
-IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'error_log')
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'error_log' AND schema_id = SCHEMA_ID('etl_process'))
 BEGIN
     CREATE TABLE etl_process.error_log
     (
@@ -9,5 +9,5 @@ BEGIN
         errormsg VARCHAR(MAX),
         starttime DATETIME,
         endtime DATETIME
-    )
-END
+    );
+END;

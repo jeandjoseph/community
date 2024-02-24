@@ -8,8 +8,6 @@ CREATE PROCEDURE etl_process.usp_get_error_log
 )
 AS
 BEGIN
-    SET NOCOUNT ON;
-
     INSERT INTO etl_process.error_log (processname, objectname, errormsg, starttime, endtime)
-    VALUES (@processname, @objectname, @errormsg, @starttime, @endtime);
-END;
+    VALUES (@processname, @objectname, @errormsg, @starttime, @endtime)
+END

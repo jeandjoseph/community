@@ -1,7 +1,8 @@
 IF OBJECT_ID('prd.sales', 'U') IS NOT NULL
     DROP TABLE prd.sales;
-    
-CREATE TABLE prd.sales (
+
+CREATE TABLE prd.sales
+(
     ProductId INT,
     ProductName VARCHAR(50),
     ProductType VARCHAR(30),

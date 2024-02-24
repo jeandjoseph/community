@@ -3,25 +3,25 @@ IF OBJECT_ID('prd.usp_GetTotalSalesByCountries', 'P') IS NOT NULL
 GO
 
 CREATE PROCEDURE prd.usp_GetTotalSalesByCountries
-    @country VARCHAR(50) = 'All'
+    @country VARCHAR(30) = NULL
 AS
 BEGIN
     SET NOCOUNT ON;
 
     SELECT 
         Country,
-        ProductName,
-        ProductType,
+        Category,
+        COUNT(*) AS TotalOrders,
         SUM(PurchasePrice) AS TotalPurchasePrice
     FROM 
-        stg.salestmp
+        prd.sales
     WHERE 
-        (@country = 'All' OR Country = @country)
+        (@country IS NULL OR Country = @country)
     GROUP BY 
         Country,
-        ProductName,
-        ProductType
+        Category
     ORDER BY 
+        Country ASC,
         TotalPurchasePrice DESC;
 END;
 GO
