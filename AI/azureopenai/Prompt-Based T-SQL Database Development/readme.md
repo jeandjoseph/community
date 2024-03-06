@@ -1,3 +1,10 @@
+# This section explains how to configure your environment to work with this notebook.
+
+- **bicycle_data_prompt.json**: is designed to house all our prompts. While it’s set up to work as is, feel free to tailor it to your needs. Customization is always an option
+- **.env**: file is the secure location for storing sensitive details such as your Azure OpenAI endpoint, keys, and more. It’s crucial to update this file with your information. Without these updates, the notebook won’t function unless you manually input the values directly into the notebook. Please handle with care!
+- **tsql**: folder is where all T-SQL scripts are stored. Remember to update it within the notebook and/or bicycle_data_prompt.json as needed.
+- **csv**: folder is where we keep the CSV sales data. Don’t forget to update it within the notebook as necessary.
+
 # SQL Server Database Development using Prompts as T-SQL Development
 In this notebook, we will learn how to use prompts as a way to develop and test Transact-SQL (T-SQL) code for SQL Server databases. Prompts are natural language requests that can be converted into T-SQL statements by using Generative AI models, such as GPT-4. This can help us write code faster, easier, and more accurately, as well as learn from the generated code examples.
 
