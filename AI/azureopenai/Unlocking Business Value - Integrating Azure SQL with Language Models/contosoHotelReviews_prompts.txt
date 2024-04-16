@@ -1,0 +1,46 @@
+Prompt 1:
+
+How many rude feedback comments are there in the hotel review?
+
+Azure OpenAI your own data setting
+	► retrieved documents:
+	v In the context of Azure OpenAI, “retrieved documents” refers to the number of document chunks provided to the large language model for formulating the final response1. The number can be set to 3, 5, 10, or 201.
+	v This is important because these retrieved documents serve as the grounding data for the AI model. They provide the context and information that the model uses to generate its responses. For example, if you’re using Azure OpenAI to search an enterprise knowledge base, the retrieved documents could be the search results that are presented as the answer to the search query2.
+	v By adjusting the number of retrieved documents, you can control the amount of information that the model has access to when formulating its responses. This can help optimize the model’s performance based on your specific use case. 
+		► Make sure you increase the retrieved documents to 20 and re send "Prompt 1" again and notice all 6 negative rude feedback showup.
+		
+	► strictness
+	v You’re welcome! In the context of Azure OpenAI, “strictness” is a parameter that can be set between 1 and 5. It determines the system’s aggressiveness in filtering search documents based on their similarity scores. A higher strictness value means a higher threshold for relevance, filtering out more less-relevant documents for responses. This allows you to control the relevance of the documents used to generate responses, optimizing the model’s performance based on your specific use case and ensuring the responses are as relevant and accurate as possible. 😊
+
+Prompt 2:
+
+Could you provide a summary of the unique instances of negative feedback?
+
+Prompt 3:
+
+Given the detailed feedback about the hotel, could you please extract and list the key issues mentioned, along with the corresponding document references?
+example:
+Rude and unhelpful staff
+
+Prompt 4:
+
+Please analyze each instance of negative feedback and provide recommendations on how we can address each of these negative comments based on your analysis.
+
+Example:
+- **Feedback:** The hotel was not too clean.
+   - **Recommendation:** One way to keep the hotel clean is to hire staff to clean and staff to validate how clean the hotel is twice a day.
+
+Prompt 5:
+
+Given the following instance of negative feedback about our hotel service:
+- Unfriendly staff
+
+Which of these should we start addressing first in order to improve our service faster and more efficiently?
+
+
+Prompt 6:
+Thank you. Could you now provide a summary of the distinct instances of positive feedback mentioned in the hotel review?
+
+
+Prompt 7:
+Was there any feedback mentioned that the staff was great?
