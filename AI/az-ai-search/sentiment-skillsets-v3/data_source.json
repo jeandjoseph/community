@@ -1,5 +1,5 @@
 {   
-    "name" : "skillup-ai-data-source-02",  
+    "name" : "<your az ai search data source name>",  
     "description" : "Documents for search.",  
     "type" : "azureblob",
     "credentials" :
