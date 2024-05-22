@@ -1,0 +1,19 @@
+{   
+    "name" : "f1099-msc-payer-ds",  
+    "description" : "Documents for search.",  
+    "type" : "adlsgen2",
+	"subtype": null,
+    "credentials" :
+    { 
+        "connectionString" : 
+		"DefaultEndpointsProtocol=https;AccountName=<your adls name>;AccountKey=<your adls key>;EndpointSuffix=core.windows.net"
+    },  
+    "container": {
+    "name": "<your adls container name>",
+    "query": "<your adls folder name>"
+  },
+  "dataChangeDetectionPolicy": null,
+  "dataDeletionDetectionPolicy": null,
+  "encryptionKey": null,
+  "identity": null
+}
