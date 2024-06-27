@@ -1,0 +1,14 @@
+--SQL Limitation
+https://learn.microsoft.com/en-us/fabric/data-warehouse/tsql-surface-area
+
+
+-- Table Constraints Limitation
+https://learn.microsoft.com/en-us/fabric/data-warehouse/table-constraints
+
+
+-- Transaction logging Limitation
+https://learn.microsoft.com/en-us/fabric/data-warehouse/transactions#limitations
+
+
+-- Unsupported data types
+https://learn.microsoft.com/en-us/fabric/data-warehouse/data-types#unsupported-data-types
