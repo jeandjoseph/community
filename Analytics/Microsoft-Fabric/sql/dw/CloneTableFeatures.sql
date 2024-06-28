@@ -2,6 +2,8 @@
 DROP SECURITY POLICY SalesFilter;
 DROP FUNCTION rls.tvf_securitypredicate;
 DROP SCHEMA rls;
+
+please replace the email with the correct email
 */
 -- Drop table if exists
 IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'Product' AND schema_id = schema_id('base'))
