@@ -116,7 +116,7 @@ GO
 
 
 -- unmask a column
-GRANT UNMASK ON DataMasking.Membership(FirstName) TO [johndoe@mngenvmcap734805.onmicrosoft.com];  
+GRANT UNMASK ON DataMasking.Membership(FirstName) TO [email];  
 GO
 
 -- Grant table level UNMASK permission
