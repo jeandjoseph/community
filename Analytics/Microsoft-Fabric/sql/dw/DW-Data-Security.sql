@@ -61,11 +61,11 @@ GO
 
 -- Now let remove the read access against the product table
 -- Revoke cannot ovevwrite share permission
-REVOKE SELECT ON OBJECT::columnsecurity.Product FROM [johndoe@mngenvmcap734805.onmicrosoft.com];  
+REVOKE SELECT ON OBJECT::columnsecurity.Product FROM [email];  
 GO  
 
 -- Deny has enought access to overwrite share permission
-DENY SELECT ON [columnsecurity].[Product] TO [johndoe@mngenvmcap734805.onmicrosoft.com];
+DENY SELECT ON [columnsecurity].[Product] TO [email];
 GO
 
 
@@ -152,12 +152,12 @@ CREATE TABLE rowsecurity.Orders
     );
 GO
 
-INSERT INTO rowsecurity.Orders  VALUES (1, 'johndoe@mngenvmcap734805.onmicrosoft.com', 'Valve', 5);
-INSERT INTO rowsecurity.Orders  VALUES (2, 'johndoe@mngenvmcap734805.onmicrosoft.com', 'Wheel', 2);
-INSERT INTO rowsecurity.Orders  VALUES (3, 'johndoe@mngenvmcap734805.onmicrosoft.com', 'Valve', 4);
-INSERT INTO rowsecurity.Orders  VALUES (4, 'jeangarellard@MngEnvMCAP734805.onmicrosoft.com', 'Bracket', 2);
-INSERT INTO rowsecurity.Orders  VALUES (5, 'jeangarellard@MngEnvMCAP734805.onmicrosoft.com', 'Wheel', 5);
-INSERT INTO rowsecurity.Orders  VALUES (6, 'jeangarellard@MngEnvMCAP734805.onmicrosoft.com', 'Seat', 5);
+INSERT INTO rowsecurity.Orders  VALUES (1, 'email1', 'Valve', 5);
+INSERT INTO rowsecurity.Orders  VALUES (2, 'email1', 'Wheel', 2);
+INSERT INTO rowsecurity.Orders  VALUES (3, 'email1', 'Valve', 4);
+INSERT INTO rowsecurity.Orders  VALUES (4, 'email2', 'Bracket', 2);
+INSERT INTO rowsecurity.Orders  VALUES (5, 'email2', 'Wheel', 5);
+INSERT INTO rowsecurity.Orders  VALUES (6, 'email2', 'Seat', 5);
 GO
 
 
@@ -168,8 +168,8 @@ GO
 
 
 
-GRANT SELECT ON rowsecurity.Orders TO [johndoe@mngenvmcap734805.onmicrosoft.com];  
-GRANT SELECT ON rowsecurity.Orders TO [jeangarellard@MngEnvMCAP734805.onmicrosoft.com]; 
+GRANT SELECT ON rowsecurity.Orders TO [email1];  
+GRANT SELECT ON rowsecurity.Orders TO [email2]; 
 GO
 
 
@@ -210,8 +210,8 @@ GO
 Allow SELECT permissions to the fn_securitypredicate function
 */
 --GRANT SELECT ON Security.tvf_securitypredicate TO Manager;  
-GRANT SELECT ON Security.tvf_securitypredicate TO [johndoe@mngenvmcap734805.onmicrosoft.com];  
-GRANT SELECT ON Security.tvf_securitypredicate TO [jeangarellard@MngEnvMCAP734805.onmicrosoft.com];  
+GRANT SELECT ON Security.tvf_securitypredicate TO [email1];  
+GRANT SELECT ON Security.tvf_securitypredicate TO [email2];  
 GO
 
 -- As admin i cant see the data
