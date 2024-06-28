@@ -58,16 +58,16 @@ GO
 
 -- Insert Data
 INSERT INTO [base].[Product]
-SELECT 1,'1010-GL120-3C','Trainer - Tailspin GL-120','Glider','Airplane','RTF',3,'Novice',79.15,'johndoe@mngenvmcap734805.onmicrosoft.com' UNION
-SELECT 2,'1010-GL155-4C','Trainer - Tailspin GL-155','Glider','Airplane','RTF',4,'Intermediate',216.65,'johndoe@mngenvmcap734805.onmicrosoft.com' UNION
-SELECT 3,'2030-PCUB-3C','Piper Cub 3 Channel','Trainer','Airplane','RTF',3,'Beginner',84.65,'johndoe@mngenvmcap734805.onmicrosoft.com' UNION
-SELECT 4,'2030-PCUB-4C','Piper Cub 4 Channel','Trainer','Airplane','RTF',4,'Intermediate',193.55,'johndoe@mngenvmcap734805.onmicrosoft.com' UNION
-SELECT 5,'2050-P47-4C','P47 4 Channel','Warbird','Airplane','RTF',4,'Intermediate',98.95, 'johndoe@mngenvmcap734805.onmicrosoft.com' UNION
-SELECT 6,'2050-P47-5C','P47 5 Channel','Warbird','Airplane','RTF',5,'Advanced',274.95, 'johndoe@mngenvmcap734805.onmicrosoft.com' UNION
-SELECT 7,'2055-P51-5C','P51','Warbird','Airplane','RTF',5,'Advanced',274.95, 'jeangarellard@MngEnvMCAP734805.onmicrosoft.com' UNION
-SELECT 8,'2060-SKYT-5C','SkyTrainer','Trainer','Airplane','RTF',5,'Advanced',179.25, 'jeangarellard@MngEnvMCAP734805.onmicrosoft.com' UNION
-SELECT 9,'3010-TAVM2-11-3C','Tailspin Aviator Mk2-11','Glider','Airplane','KIT',3,'Intermediate',169.35, 'jeangarellard@MngEnvMCAP734805.onmicrosoft.com' UNION
-SELECT 10,'3010-TAVM2-12-4C','Tailspin Aviator Mk2-12','Trainer','Airplane','KIT',4,'Intermediate',188.05, 'jeangarellard@MngEnvMCAP734805.onmicrosoft.com' 
+SELECT 1,'1010-GL120-3C','Trainer - Tailspin GL-120','Glider','Airplane','RTF',3,'Novice',79.15,'email1' UNION
+SELECT 2,'1010-GL155-4C','Trainer - Tailspin GL-155','Glider','Airplane','RTF',4,'Intermediate',216.65,'email1' UNION
+SELECT 3,'2030-PCUB-3C','Piper Cub 3 Channel','Trainer','Airplane','RTF',3,'Beginner',84.65,'email1' UNION
+SELECT 4,'2030-PCUB-4C','Piper Cub 4 Channel','Trainer','Airplane','RTF',4,'Intermediate',193.55,'email1' UNION
+SELECT 5,'2050-P47-4C','P47 4 Channel','Warbird','Airplane','RTF',4,'Intermediate',98.95, 'email2' UNION
+SELECT 6,'2050-P47-5C','P47 5 Channel','Warbird','Airplane','RTF',5,'Advanced',274.95, 'email2' UNION
+SELECT 7,'2055-P51-5C','P51','Warbird','Airplane','RTF',5,'Advanced',274.95, 'email3' UNION
+SELECT 8,'2060-SKYT-5C','SkyTrainer','Trainer','Airplane','RTF',5,'Advanced',179.25, 'email3' UNION
+SELECT 9,'3010-TAVM2-11-3C','Tailspin Aviator Mk2-11','Glider','Airplane','KIT',3,'Intermediate',169.35, 'email3' UNION
+SELECT 10,'3010-TAVM2-12-4C','Tailspin Aviator Mk2-12','Trainer','Airplane','KIT',4,'Intermediate',188.05, 'email3' 
 
 
 -- Validate data has been loaded
