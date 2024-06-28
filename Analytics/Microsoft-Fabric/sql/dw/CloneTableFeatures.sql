@@ -148,10 +148,10 @@ DROP TABLE clone.Product_restored
 
 -- Apply Colomn Level Security
 -- NO access on [ProductName], [RetailPrice], [SalesPrep]
-GRANT SELECT TO [johndoe@mngenvmcap734805.onmicrosoft.com];
+GRANT SELECT TO [email];
 GO
 
-DENY SELECT ON [base].[Product] TO [johndoe@mngenvmcap734805.onmicrosoft.com];
+DENY SELECT ON [base].[Product] TO [email];
 GO
 
 GRANT SELECT ON [base].[Product](
@@ -189,8 +189,8 @@ ON [base].[Product]
 WITH (STATE = ON);  
 GO
 
-GRANT SELECT ON rls.tvf_securitypredicate TO [johndoe@mngenvmcap734805.onmicrosoft.com];  
-GRANT SELECT ON rls.tvf_securitypredicate TO [jeangarellard@MngEnvMCAP734805.onmicrosoft.com];  
+GRANT SELECT ON rls.tvf_securitypredicate TO [email1];  
+GRANT SELECT ON rls.tvf_securitypredicate TO [email2];  
 GO
 
 
@@ -221,7 +221,7 @@ ALTER COLUMN [SalesRep] ADD MASKED WITH (FUNCTION = 'email()');
 GO
 
 -- Remove Column Level Security
-GRANT SELECT ON [base].[Product] TO [johndoe@mngenvmcap734805.onmicrosoft.com];
+GRANT SELECT ON [base].[Product] TO [email];
 GO
 
 CREATE TABLE clone.Product_dm AS CLONE OF [base].[Product];
