@@ -80,13 +80,13 @@ ALTER TABLE prd.DimProducts ADD CONSTRAINT PK_PrimaryKeyDimProducts PRIMARY KEY 
 -- Initial load
 COPY INTO stg.DimProducts
 (ProductId 1, Type 2, SKU 3, Name 4, Size 5, IsInStock 6)
-FROM 'https://adlesilabs.dfs.core.windows.net/root/scd/initial/*.csv'
+FROM 'https://<adls-account-name>.dfs.core.windows.net/root/scd/initial/*.csv'
 WITH
 (
 	FILE_TYPE = 'CSV'
 	,MAXERRORS = 0
 	,FIRSTROW = 2
-	,ERRORFILE = 'https://adlesilabs.dfs.core.windows.net/root/scd/'
+	,ERRORFILE = 'https://<adls-account-name>.dfs.core.windows.net/root/scd/'
 )
 GO
 
