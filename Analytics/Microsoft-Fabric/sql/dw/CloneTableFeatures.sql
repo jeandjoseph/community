@@ -93,9 +93,9 @@ GO
 
 -- FYI - there are two independent tables.
 INSERT INTO [base].[Product]
-SELECT 11,'3010-TAVM2-15-4C','Tailspin Aviator Mk2-15','Trainer','Airplane','KIT',4,'Intermediate',204.55, 'jeangarellard@MngEnvMCAP734805.onmicrosoft.com' UNION
-SELECT 12,'3010-TWAR-BM32-5C','Tailspin Warbird BM32','Warbird','Airplane','KIT',5,'Advanced',349.75, 'johndoe@mngenvmcap734805.onmicrosoft.com' UNION
-SELECT 13,'3050-THeli-Co-Ax Pro-4C','Tailspin Heli - Co-Ax Pro Mk I - 4ch','Co-Axial','Helicopter','KIT',4,'Intermediate',389.95,'jeangarellard@MngEnvMCAP734805.onmicrosoft.com'
+SELECT 11,'3010-TAVM2-15-4C','Tailspin Aviator Mk2-15','Trainer','Airplane','KIT',4,'Intermediate',204.55, 'email1' UNION
+SELECT 12,'3010-TWAR-BM32-5C','Tailspin Warbird BM32','Warbird','Airplane','KIT',5,'Advanced',349.75, 'email1' UNION
+SELECT 13,'3050-THeli-Co-Ax Pro-4C','Tailspin Heli - Co-Ax Pro Mk I - 4ch','Co-Axial','Helicopter','KIT',4,'Intermediate',389.95,'email2'
 GO
 
 SELECT COUNT(1) AS base FROM [base].[Product]
@@ -106,8 +106,8 @@ GO
 
 
 INSERT INTO [clone].[Product]
-SELECT 14,'3050-THeli-MaxPro-6C','Tailspin Heli - Max Pro Flight - 6ch','Collective pitch','Helicopter','KIT',6,'Professional',579.55,'jeangarellard@MngEnvMCAP734805.onmicrosoft.com' UNION
-SELECT 15,'3050-THeli-Pro-5C','Tailspin Heli - Pro Mk III - 5ch','Fixed pitch','Helicopter','KIT',5,'Advanced',401.95,'jeangarellard@MngEnvMCAP734805.onmicrosoft.com' 
+SELECT 14,'3050-THeli-MaxPro-6C','Tailspin Heli - Max Pro Flight - 6ch','Collective pitch','Helicopter','KIT',6,'Professional',579.55,'email2' UNION
+SELECT 15,'3050-THeli-Pro-5C','Tailspin Heli - Pro Mk III - 5ch','Fixed pitch','Helicopter','KIT',5,'Advanced',401.95,'email3' 
 GO
 
 -- Validate
