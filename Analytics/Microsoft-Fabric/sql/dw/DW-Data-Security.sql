@@ -74,7 +74,7 @@ GRANT SELECT ON [columnsecurity].[Product](
      [ProductID], [ProductSKU], [ProductCategory], [ItemGroup]
     ,[KitType], [Channels],[Demographic]   
     ) 
-TO [johndoe@mngenvmcap734805.onmicrosoft.com];
+TO [email];
 GO
 
 --Clean Up
