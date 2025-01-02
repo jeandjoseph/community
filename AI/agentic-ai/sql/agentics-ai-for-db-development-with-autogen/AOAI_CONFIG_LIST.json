@@ -1,0 +1,28 @@
+[
+    {
+        "model": "gpt-4o",
+        "api_key": "<<your-azure-openai-endpoint-key>>",
+        "base_url": "https://<<your-azure-openai-endpoint-name>>.openai.azure.com/",
+        "api_type": "azure",
+        "api_version": "<<your-azure-openai-endpoint-preview>>"
+    },
+    {
+        "model": "gpt-35-turbo",
+        "api_key": "<<your-azure-openai-endpoint-key>>",
+        "base_url": "https://<<your-azure-openai-endpoint-name>>.openai.azure.com/",
+        "api_type": "azure",
+        "api_version": "2023-03-15-preview"
+    },    
+    {
+        "api_key": "NULL",
+        "api_base": "Your Azure OpenAI Service Endpoin",
+        "api_type": "openai"
+    },
+    {
+        "model": "Your Azure OpenAI Service Deployment Model Name",
+        "api_key": "Your Azure OpenAI Service API Key",
+        "base_url": "Your Azure OpenAI Service Endpoin",
+        "api_type": "azure",
+        "api_version": "Your Azure OpenAI Service version, eg 2023-12-01-preview"
+    }
+]

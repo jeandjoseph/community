@@ -1,0 +1,4 @@
+openai
+pyautogen
+flaml[automl]
+python-dotenv
