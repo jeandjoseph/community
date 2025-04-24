@@ -1,0 +1,7 @@
+ProductId,Type,SKU,Name,Size,IsInStock
+105,variable,woo-vneck-tee,V-Neck T-Shirt,Large,1
+187,variable,woo-hoodie,Hoodie,Medium,1
+108,simple,woo-hoodie-with-logo,Hoodie with Logo,X-Large,1
+176,simple,woo-tshirt,T-Shirt,2X-Large,1
+156,simple,woo-beanie,Beanie,3X-Large,1
+117,simple,woo-belt,Belt,Small,1
