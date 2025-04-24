@@ -77,13 +77,13 @@ COPY INTO stg.DimProducts
     Size 5,          -- Fifth column maps to 'Size'
     IsInStock 6      -- Sixth column maps to 'IsInStock'
 )
-FROM 'https://adlstorg.dfs.core.windows.net/root/scd/initial/*.csv' -- Source path for initial CSV files
+FROM 'https://your-storage-name.dfs.core.windows.net/root/scd/initial/*.csv' -- Source path for initial CSV files
 WITH
 (
     FILE_TYPE = 'CSV',         -- Specify the file format as CSV
     MAXERRORS = 0,             -- Stop loading if any errors occur
     FIRSTROW = 2,              -- Skip the header row in the CSV file
-    ERRORFILE = 'https://adlstorg.dfs.core.windows.net/root/scd/' -- Path for storing error logs
+    ERRORFILE = 'https://your-storage-name.dfs.core.windows.net/root/scd/' -- Path for storing error logs
 )
 GO
 
@@ -122,13 +122,13 @@ GO
 -- Load delta data into staging
 COPY INTO stg.DimProducts
 (ProductId 1, Type 2, SKU 3, Name 4, Size 5, IsInStock 6)
-FROM 'https://adlstorg.dfs.core.windows.net/root/scd/delta/products_delta.csv'
+FROM 'https://your-storage-name.dfs.core.windows.net/root/scd/delta/products_delta.csv'
 WITH
 (
     FILE_TYPE = 'CSV',
     MAXERRORS = 0,
     FIRSTROW = 2,
-    ERRORFILE = 'https://adlstorg.dfs.core.windows.net/root/scd/'
+    ERRORFILE = 'https://your-storage-name.dfs.core.windows.net/root/scd/'
 )
 GO
 
