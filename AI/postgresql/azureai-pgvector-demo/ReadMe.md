@@ -38,8 +38,18 @@ Organizations often struggle to leverage AI on private data without compromising
 ---
 
 ## 1️⃣ **Set Up PostgreSQL with pgvector**
+Before running the SQL scripts, make sure to enable the required extensions at the **server parameters** level:
+
+- Access the **Azure Portal**.
+- Navigate to your **Azure PostgreSQL Flexible Server**.
+- Go to **Server Parameters** and search for `azure_ai` extension.
+- Enable the following extensions:
+  - [azure_ai](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/generative-ai-azure-overview)
+  - [pgvector](https://github.com/pgvector/pgvector)
+- Click **Save** to apply changes.
+- Also, ensure that `track_functions` is enabled for monitoring function execution.
 Navigate to the `sql/` folder. It contains scripts to create tables, define functions, and integrate Azure AI services.
-### first execute these Files in `sql/` in this order:
+### Execute these Files in `sql/` in this order:
 - `00_create_tables_insert_data.sql`: *Create base tables and insert sample data.*
 - `01_create_pg_functions.sql`: *Define Postgres functions for semantic search and chat operations.*
 - `02_setting_up_azure_openai_n_ai_svc.sql`: *Configure Azure OpenAI and AI Language services integration.*
