@@ -14,7 +14,7 @@ This demo showcases how you can **chat with your private data securely** using t
 flowchart LR
     User[User Query] --> UI[Web/App Interface]
     UI --> PG[(PostgreSQL + pgvector)]
-    PG --> AzureOpenAI[Azure OpenAI Service]
+    PG --> AzureOpenAI[OpenAI text-embedding-ada-002]
     PG --> AzureLanguage[Azure AI Language Service]
     PG --> AzureTranslator[Azure Translator Service]
     AzureOpenAI --> UI
