@@ -29,10 +29,14 @@ Organizations often struggle to leverage AI on private data without compromising
 ---
 
 ## 🛠 **Tech Stack**
-- **PostgreSQL** with `pgvector` extension
-- **Azure OpenAI Service** for LLM-powered responses
-- **Azure Cognitive Services** for PII detection and sentiment analysis
-- **Python / Node.js** for orchestration (optional)
+- **PostgreSQLwith [pgvector](https://github.com/pgvector/pgvector) extension:**  Vector similarity search for semantic queries and embeddings storage.
+- **OpenAI [text-embedding-ada-002](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/tutorials/embeddings?tabs=command-line%2Cpython-new&pivots=programming-language-python):** Generates high-quality embeddings for semantic search and recommendation tasks.
+- **Azure [AI Language](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview) Service:** Provides sentiment analysis, summarization, entity extraction, and PII detection for text data.
+- **Azure [AI Translator](https://learn.microsoft.com/en-us/azure/ai-services/translator/) Service**: Enables real-time language translation for multilingual support.
+- **SQL** Used for orchestration and querying.
+- **Python (optional)** For orchestration, integration, and automation.
+
+
 
 ---
 
