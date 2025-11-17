@@ -8,10 +8,21 @@ This demo showcases how you can **chat with your private data securely** using t
 - **PostgreSQL** – A robust, open-source relational database that now supports advanced AI scenarios with extensions like **pgvector**.
 - **Azure AI Services** – Easily integrate **Large Language Models (LLMs)** and cognitive services for natural language understanding, sentiment analysis, and PII detection.
 - **pgvector** – Enables **vector similarity search** for semantic queries, making your database AI-ready.
-![](https://github.com/jeandjoseph/community/blob/main/AI/postgresql/azureai-pgvector-demo/flow_diagram.png)
----
 
-## ✅ **Why This Matters**
+
+```mermaid
+flowchart LR
+    User[User Query] --> UI[Web/App Interface]
+    UI --> PG[(PostgreSQL + pgvector)]
+    PG --> AzureOpenAI[Azure OpenAI Service]
+    PG --> AzureLanguage[Azure AI Language Service]
+    PG --> AzureTranslator[Azure Translator Service]
+    AzureOpenAI --> UI
+    AzureLanguage --> UI
+    AzureTranslator --> UI
+```
+
+## **Why This Matters**
 Organizations often struggle to leverage AI on private data without compromising **privacy**, **scalability**, or **cost**. This solution solves that by:
 
 - **Keeping your data private**: Queries run directly on your PostgreSQL database—no need to expose raw data to external systems.
