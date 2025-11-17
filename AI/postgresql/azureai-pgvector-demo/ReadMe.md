@@ -35,9 +35,24 @@ Organizations often struggle to leverage AI on private data without compromising
 - **Azure [AI Translator](https://learn.microsoft.com/en-us/azure/ai-services/translator/) Service**: Enables real-time language translation for multilingual support.
 - **[SQL](https://learn.microsoft.com/en-us/training/modules/introduction-to-transact-sql/1-introduction)** Used for orchestration and querying.
 - **[Python](https://learn.microsoft.com/en-us/shows/intro-to-python-development/) (optional)** For orchestration, integration, and automation.
+---
 
+## 1️⃣ **Set Up PostgreSQL with pgvector**
+Navigate to the `sql/` folder. It contains scripts to create tables, define functions, and integrate Azure AI services.
+### first execute these Files in `sql/` in this order:
+- `00_create_tables_insert_data.sql`: *Create base tables and insert sample data.*
+- `01_create_pg_functions.sql`: *Define Postgres functions for semantic search and chat operations.*
+- `02_setting_up_azure_openai_n_ai_svc.sql`: *Configure Azure OpenAI and AI Language services integration.*
+- `03_populate_products_vector_summarise_data.sql`: *Generate embeddings and populate vector columns for semantic queries.*
+- `04_chat_on_az_postgresql_data.sql`: *Enable chat-based interaction with PostgreSQL data.*
+- `042_advance_chat_on_az_postgresql_data.sql`: *Advanced chat features (optional).*
 
-
+### **second update the .env file & install python libraries if you want to test the streamli python application**:
+- Update the `.env` file with the proper credential information
+- Create a python virtual environment
+- Activate your python virtual environment
+- Install all the library dependencies
+- run the streamlit application
 ---
 
 ## ✅ **Key Features**
