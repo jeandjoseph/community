@@ -48,7 +48,8 @@ Before running the SQL scripts, make sure to enable the required extensions at t
   - [pgvector](https://github.com/pgvector/pgvector)
 - Click **Save** to apply changes.
 - Also, ensure that [track_functions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-server-parameters) is enabled for monitoring function execution.
-Navigate to the `sql/` folder. It contains scripts to create tables, define functions, and integrate Azure AI services.
+  
+Second, Navigate to the `sql/` folder. It contains scripts to create tables, define functions, and integrate Azure AI services.
 ### Execute these Files in `sql/` in this order:
 - `00_create_tables_insert_data.sql`: *Create base tables and insert sample data.*
 - `01_create_pg_functions.sql`: *Define Postgres functions for semantic search and chat operations.*
@@ -59,7 +60,7 @@ Navigate to the `sql/` folder. It contains scripts to create tables, define func
 
 
 ### ✅ Update the `.env` file & install Python libraries (for Streamlit app):
-Navigate to the `python/` folder. Update the `.env` file with your Azure and PostgreSQL credentials.
+Lastly, Navigate to the `python/` folder. Update the `.env` file with your Azure and PostgreSQL credentials.
 - Create a Python virtual environment:
   ```bash
   python -m venv venv
