@@ -47,12 +47,26 @@ Navigate to the `sql/` folder. It contains scripts to create tables, define func
 - `04_chat_on_az_postgresql_data.sql`: *Enable chat-based interaction with PostgreSQL data.*
 - `042_advance_chat_on_az_postgresql_data.sql`: *Advanced chat features (optional).*
 
-### **second update the .env file & install python libraries if you want to test the streamli python application**:
-- Update the `.env` file with the proper credential information
-- Create a python virtual environment
-- Activate your python virtual environment
-- Install all the library dependencies
-- run the streamlit application
+
+### ✅ Update the `.env` file & install Python libraries (for Streamlit app):
+Navigate to the `python/` folder. Update the `.env` file with your Azure and PostgreSQL credentials.
+- Create a Python virtual environment:
+  ```bash
+  python -m venv venv
+  ```
+- Activate the virtual environment:
+  ```
+  source venv/bin/activate   # macOS/Linux
+  venv\Scripts\activate      # Windows
+  ```
+- Install dependencies:
+  ```
+  pip install -r requirements.txt
+  ```
+- Run the Streamlit application:
+  ```
+  streamlit run app.py
+  ```
 ---
 
 ## ✅ **Key Features**
