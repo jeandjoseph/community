@@ -47,7 +47,7 @@ Before running the SQL scripts, make sure to enable the required extensions at t
   - [azure_ai](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/generative-ai-azure-overview)
   - [pgvector](https://github.com/pgvector/pgvector)
 - Click **Save** to apply changes.
-- Also, ensure that `track_functions` is enabled for monitoring function execution.
+- Also, ensure that [track_functions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-server-parameters) is enabled for monitoring function execution.
 Navigate to the `sql/` folder. It contains scripts to create tables, define functions, and integrate Azure AI services.
 ### Execute these Files in `sql/` in this order:
 - `00_create_tables_insert_data.sql`: *Create base tables and insert sample data.*
