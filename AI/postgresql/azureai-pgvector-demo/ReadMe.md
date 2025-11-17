@@ -33,8 +33,8 @@ Organizations often struggle to leverage AI on private data without compromising
 - **OpenAI [text-embedding-ada-002](https://learn.microsoft.com/en-us/azure/ai-foundry/openai/tutorials/embeddings?tabs=command-line%2Cpython-new&pivots=programming-language-python):** Generates high-quality embeddings for semantic search and recommendation tasks.
 - **Azure [AI Language](https://learn.microsoft.com/en-us/azure/ai-services/language-service/overview) Service:** Provides sentiment analysis, summarization, entity extraction, and PII detection for text data.
 - **Azure [AI Translator](https://learn.microsoft.com/en-us/azure/ai-services/translator/) Service**: Enables real-time language translation for multilingual support.
-- **SQL** Used for orchestration and querying.
-- **Python (optional)** For orchestration, integration, and automation.
+- **[SQL](https://learn.microsoft.com/en-us/training/modules/introduction-to-transact-sql/1-introduction)** Used for orchestration and querying.
+- **[Python](https://learn.microsoft.com/en-us/shows/intro-to-python-development/) (optional)** For orchestration, integration, and automation.
 
 
 
