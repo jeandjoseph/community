@@ -1,0 +1,48 @@
+
+DROP TABLE [stg].[salestmp]
+DROP TABLE [prd].[sales]
+DROP TABLE [etl_process].[error_log]
+DROP TABLE [etl_process].[etl_process_log]
+DROP PROC [etl_process].[usp_BulkInsertFromCSV]
+DROP PROC [etl_process].[usp_get_error_log]
+DROP PROC [etl_process].[usp_get_process_log]
+DROP PROC [etl_process].[usp_load_bicycle_staging_data]
+DROP PROC [prd].[usp_GetTotalSalesByCountries]
+
+DROP SCHEMA [stg] 
+DROP SCHEMA [prd] 
+DROP SCHEMA [etl_process]
+
+
+SELECT TOP (1000) [ProductId]
+      ,[ProductName]
+      ,[ProductType]
+      ,[Color]
+      ,[OrderQuantity]
+      ,[Size]
+      ,[Category]
+      ,[Country]
+      ,[Date]
+      ,[PurchasePrice]
+      ,[SellingPrice]
+  FROM [stg].[salestmp]
+
+
+SELECT TOP (1000) [ProductId]
+      ,[ProductName]
+      ,[ProductType]
+      ,[Color]
+      ,[OrderQuantity]
+      ,[Size]
+      ,[Category]
+      ,[Country]
+      ,[Date]
+      ,[PurchasePrice]
+      ,[SellingPrice]
+  FROM [prd].[sales]
+
+
+
+prd.usp_GetTotalSalesByCountries
+
+prd.usp_GetTotalSalesByCountries 'Italy'
