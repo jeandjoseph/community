@@ -24,7 +24,7 @@ pip install "autogen-ext[openai]"
 pip install "autogen-ext[azure]"
 # Install python-dotenv
 pip install python-dotenv
-``
+```
 
 - `TSQLExecutorAgent.py`: Executes SQL scripts by reading files and running them against the target database, ensuring proper connection handling and error reporting.
 - `TSQLGeneratorAgent.py`: Creates SQL scripts based on predefined prompts or templates, then saves them for later execution in the workflow.
