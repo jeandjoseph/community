@@ -17,6 +17,16 @@ python -m venv .venv
 .venv\Scripts\activate.bat
 ```
 
+Install Autogen Azure, & OpenAI Libraries:
+```python
+pip install -U "autogen-agentchat"
+pip install "autogen-ext[openai]"
+pip install "autogen-ext[azure]"
+# Install Streamlit
+pip install streamlit
+# Install python-dotenv
+pip install python-dotenv
+``
 
 - `TSQLExecutorAgent.py`: Executes SQL scripts by reading files and running them against the target database, ensuring proper connection handling and error reporting.
 - `TSQLGeneratorAgent.py`: Creates SQL scripts based on predefined prompts or templates, then saves them for later execution in the workflow.
