@@ -22,8 +22,6 @@ Install Autogen Azure, & OpenAI Libraries:
 pip install -U "autogen-agentchat"
 pip install "autogen-ext[openai]"
 pip install "autogen-ext[azure]"
-# Install Streamlit
-pip install streamlit
 # Install python-dotenv
 pip install python-dotenv
 ``
