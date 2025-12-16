@@ -61,8 +61,13 @@ Before running the SQL scripts, make sure to enable the required extensions at t
 - Click **Save** to apply changes.
 - Also, ensure that [track_functions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-server-parameters) is enabled for monitoring function execution.
   
+### Step 2️⃣: Provision Azure OpenAI Embedding Model
+- Provision and connect to [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-foundry/models/)
+- Provision `text-embedding-ada-003`
+- Copy the **model endpoint and key**, and **save** them in a **notepad for later use**.
+
+### Step 3️⃣: Download & Execute sql script Files
 Second, Navigate to the `sql/` folder. It contains scripts to create tables, define functions, and integrate Azure AI services.
-### Step 2️⃣: Download & Execute these Files in `sql/` in this order:
 - Connect to the **Azure PostgreSQL** instance via **VS Code** and execute the script files below in order.
     - `00_create_tables_insert_data.sql`: *Create base tables and insert sample data.*
     - `01_create_pg_functions.sql`: *Define Postgres functions for semantic search and chat operations.*
@@ -71,31 +76,28 @@ Second, Navigate to the `sql/` folder. It contains scripts to create tables, def
     - `04_chat_on_az_postgresql_data.sql`: *Enable chat-based interaction with PostgreSQL data.*
     - `042_advance_chat_on_az_postgresql_data.sql`: *Advanced chat features (optional).*
 
-### Step 3️⃣: Set up the application scripts
+### Step 4️⃣: Set up the application scripts
 -  Navigate to the `python/` folder
 -  Download all python script files along with the `env.env` file
 -  Update the `env.env` file using the parameters below, then save it as `.env`
     - POSTGRES_CONNECT_STRING=postgresql://{your-username}:{your-password}@{your-host-name}.postgres.database.azure.com/{your-database-name}?sslmode=require
-    - 
-### ✅ Update the `.env` file & install Python libraries (for Streamlit app):
-Lastly, Navigate to the `python/` folder. Update the `.env` file with your Azure and PostgreSQL credentials.
-- Create a Python virtual environment:
-  ```bash
-  python -m venv venv
-  ```
+-  Create a Python virtual environment using below script:
+```bash
+python -m venv venv
+```
 - Activate the virtual environment:
-  ```
-  source venv/bin/activate   # macOS/Linux
-  venv\Scripts\activate      # Windows
-  ```
+```
+source venv/bin/activate   # macOS/Linux
+venv\Scripts\activate      # Windows
+```
 - Install dependencies:
-  ```
-  pip install -r requirements.txt
-  ```
+```
+pip install -r requirements.txt
+```
 - Run the Streamlit application:
-  ```
-  streamlit run app.py
-  ```
+```
+streamlit run app.py
+```
 ---
 
 ## ✅ **Key Features**
