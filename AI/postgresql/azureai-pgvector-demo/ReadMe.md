@@ -47,8 +47,9 @@ Organizations often struggle to leverage AI on private data without compromising
 - **[SQL](https://learn.microsoft.com/en-us/training/modules/introduction-to-transact-sql/1-introduction)** Used for orchestration and querying.
 - **[Python](https://learn.microsoft.com/en-us/shows/intro-to-python-development/) (optional)** For orchestration, integration, and automation.
 ---
-# Complete Setup Guide: From Database Configuration to Application Deployment
-____
+## Complete Setup Guide: From Database Configuration to Application Deployment
+---
+
 ### Step 1️⃣: **Set Up PostgreSQL with pgvector**
 Before running the SQL scripts, make sure to enable the required extensions at the **server parameters** level:
 
