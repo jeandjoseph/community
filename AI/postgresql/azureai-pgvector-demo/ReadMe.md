@@ -64,15 +64,16 @@ Before running the SQL scripts, make sure to enable the required extensions at t
 ### Step 2️⃣: Provision Azure OpenAI Embedding Model
 - Provision and connect to [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-foundry/models/)
 - Provision `text-embedding-ada-003`
-- Copy the **model endpoint and key**, and **save** them in a **notepad for later use**.
+- Copy the **model endpoint and key**, and **save** them in a **notepad** for **later** use. **Repeat the same step** for your **Azure Language and Translator** services to ensure you have all required endpoints and keys ready for configuration.
 
 ### Step 3️⃣: Download & Execute sql script Files
 Second, Navigate to the `sql/` folder. It contains scripts to create tables, define functions, and integrate Azure AI services.
 - Connect to the **Azure PostgreSQL** instance via **VS Code** and execute the script files below in order.
     - `00_create_tables_insert_data.sql`: *Create base tables and insert sample data.*
     - `01_create_pg_functions.sql`: *Define Postgres functions for semantic search and chat operations.*
-    - `02_setting_up_azure_openai_n_ai_svc.sql`: *Configure Azure OpenAI and AI Language services integration.*
-    - `03_populate_products_vector_summarise_data.sql`: *Generate embeddings and populate vector columns for semantic queries.*
+    - **Note:** Ensure that you update the appropriate **sql script** files to reflect the **correct Azure AI service endpoint and key saved in your notepad**.
+        - `02_setting_up_azure_openai_n_ai_svc.sql`: *Configure Azure OpenAI and AI Language services integration.*
+        - `03_populate_products_vector_summarise_data.sql`: *Generate embeddings and populate vector columns for semantic queries.*
     - `04_chat_on_az_postgresql_data.sql`: *Enable chat-based interaction with PostgreSQL data.*
     - `042_advance_chat_on_az_postgresql_data.sql`: *Advanced chat features (optional).*
 
