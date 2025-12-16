@@ -80,7 +80,7 @@ Second, Navigate to the `sql/` folder. It contains scripts to create tables, def
 
 ### Step 4️⃣: Set up the application scripts
 -  Navigate to the `python/` folder
--  Download all python script files along with the `env.env` file
+-  Download all python script files along with the `env.env` and `/dependencies.txt` files
 -  Update the `env.env` file using the parameters below, then save it as `.env`
     - POSTGRES_CONNECT_STRING=postgresql://{your-username}:{your-password}@{your-host-name}.postgres.database.azure.com/{your-database-name}?sslmode=require
 -  Create a Python virtual environment using below script:
