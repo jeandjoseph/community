@@ -74,7 +74,7 @@ Second, Navigate to the `sql/` folder. It contains scripts to create tables, def
     - `01_create_pg_functions.sql`: *Define Postgres functions for semantic search and chat operations.*
     - **Note:** Ensure that you update the appropriate **sql script** files to reflect the **correct Azure AI service endpoint and key saved in your notepad**.
         - `02_setting_up_azure_openai_n_ai_svc.sql`: *Configure Azure OpenAI and AI Language services integration.*
-        - `03_populate_products_vector_summarise_data.sql`: *Generate embeddings and populate vector columns for semantic queries.*
+    - `03_populate_products_vector_summarise_data.sql`: *Generate embeddings and populate vector columns for semantic queries.*
     - `04_chat_on_az_postgresql_data.sql`: *Enable chat-based interaction with PostgreSQL data.*
     - `042_advance_chat_on_az_postgresql_data.sql`: *Advanced chat features (optional).*
 
