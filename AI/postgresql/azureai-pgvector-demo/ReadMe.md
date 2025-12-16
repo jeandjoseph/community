@@ -47,8 +47,9 @@ Organizations often struggle to leverage AI on private data without compromising
 - **[SQL](https://learn.microsoft.com/en-us/training/modules/introduction-to-transact-sql/1-introduction)** Used for orchestration and querying.
 - **[Python](https://learn.microsoft.com/en-us/shows/intro-to-python-development/) (optional)** For orchestration, integration, and automation.
 ---
-
-## 1️⃣ **Set Up PostgreSQL with pgvector**
+# Complete Setup Guide: From Database Configuration to Application Deployment
+____
+### Step 1️⃣: **Set Up PostgreSQL with pgvector**
 Before running the SQL scripts, make sure to enable the required extensions at the **server parameters** level:
 
 - Access the **Azure Portal**.
@@ -61,15 +62,21 @@ Before running the SQL scripts, make sure to enable the required extensions at t
 - Also, ensure that [track_functions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-server-parameters) is enabled for monitoring function execution.
   
 Second, Navigate to the `sql/` folder. It contains scripts to create tables, define functions, and integrate Azure AI services.
-### Execute these Files in `sql/` in this order:
-- `00_create_tables_insert_data.sql`: *Create base tables and insert sample data.*
-- `01_create_pg_functions.sql`: *Define Postgres functions for semantic search and chat operations.*
-- `02_setting_up_azure_openai_n_ai_svc.sql`: *Configure Azure OpenAI and AI Language services integration.*
-- `03_populate_products_vector_summarise_data.sql`: *Generate embeddings and populate vector columns for semantic queries.*
-- `04_chat_on_az_postgresql_data.sql`: *Enable chat-based interaction with PostgreSQL data.*
-- `042_advance_chat_on_az_postgresql_data.sql`: *Advanced chat features (optional).*
+### Step 2️⃣: Download & Execute these Files in `sql/` in this order:
+- Connect to the **Azure PostgreSQL** instance via **VS Code** and execute the script files below in order.
+    - `00_create_tables_insert_data.sql`: *Create base tables and insert sample data.*
+    - `01_create_pg_functions.sql`: *Define Postgres functions for semantic search and chat operations.*
+    - `02_setting_up_azure_openai_n_ai_svc.sql`: *Configure Azure OpenAI and AI Language services integration.*
+    - `03_populate_products_vector_summarise_data.sql`: *Generate embeddings and populate vector columns for semantic queries.*
+    - `04_chat_on_az_postgresql_data.sql`: *Enable chat-based interaction with PostgreSQL data.*
+    - `042_advance_chat_on_az_postgresql_data.sql`: *Advanced chat features (optional).*
 
-
+### Step 3️⃣: Set up the application scripts
+-  Navigate to the `python/` folder
+-  Download all python script files along with the `env.env` file
+-  Update the `env.env` file using the parameters below, then save it as `.env`
+    - POSTGRES_CONNECT_STRING=postgresql://{your-username}:{your-password}@{your-host-name}.postgres.database.azure.com/{your-database-name}?sslmode=require
+    - 
 ### ✅ Update the `.env` file & install Python libraries (for Streamlit app):
 Lastly, Navigate to the `python/` folder. Update the `.env` file with your Azure and PostgreSQL credentials.
 - Create a Python virtual environment:
