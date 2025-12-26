@@ -1,0 +1,28 @@
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: demo/postgres-sample:latest
+    container_name: demo-postgres
+    hostname: my-postgres-db  # <-- Add this: custom hostname for the instance
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      DEMO_USER: ${DEMO_USER}
+      DEMO_USER_PASSWORD: ${DEMO_USER_PASSWORD}
+      DEMO_DB: ${DEMO_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - demo_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  demo_pg_data:
+    driver: local

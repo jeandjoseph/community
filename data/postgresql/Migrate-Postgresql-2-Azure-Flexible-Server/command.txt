@@ -1,0 +1,41 @@
+
+# Stop and remove everything, including the data volume
+docker compose down -v
+
+# Optional: remove the previously built image to force a fresh build
+docker image rm keen/postgres-sample:latest
+
+# Build and start clean
+docker compose up -d --build
+
+
+
+
+# Connect to default database
+psql -h localhost -p 5432 -U ${POSTGRES_USER} -d ${POSTGRES_DB}
+
+# Connect to sample app database
+psql -h localhost -p 5432 -U ${DEMO_USER} -d ${DEMO_DB}
+
+
+
+
+
+# Connect as admin to default database
+docker exec -it demo-postgres psql -U ${POSTGRES_USER} -d ${POSTGRES_DB}
+
+# Connect as demo_user to sample database
+docker exec -it demo-postgres psql -U ${DEMO_USER} -d ${DEMO_DB}
+
+
+# 4. Using a Programming Language (e.g., Python with psycopg2):
+import psycopg2
+
+# Connect to sample database
+conn = psycopg2.connect(
+    host="localhost",
+    port=5432,
+    database="${DEMO_DB}",
+    user="${DEMO_USER}",
+    password="${DEMO_USER_PASSWORD}"
+)
