@@ -68,6 +68,8 @@ flowchart LR
 
 <h4>Optimized Design: AI Services with Precomputed Embeddings and Caching</h4>
 
+- Redesigning the AI pipeline to align with the static nature of the dataset, reducing redundant service calls and optimizing cost.
+
 
 ```mermaid
 flowchart LR
