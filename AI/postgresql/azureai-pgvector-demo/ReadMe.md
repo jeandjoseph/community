@@ -9,6 +9,61 @@ This demo showcases how you can **chat with your private data securely** using t
 - **Azure AI Services** – Easily integrate **Large Language Models (LLMs)** and cognitive services for natural language understanding, sentiment analysis, and PII detection.
 - **pgvector** – Enables **vector similarity search** for semantic queries, making your database AI-ready.
 
+```mermaid
+flowchart LR
+  subgraph Client
+    U["User Query"]
+    UI["Web/App Interface (Bot/Portal/API)"]
+    U --> UI
+  end
+
+  subgraph Data_Layer["Data Layer"]
+    PG["Azure Database for PostgreSQL + pgvector"]
+    BLOB["Azure Blob Storage - Raw Docs"]
+  end
+
+  subgraph AI_Services["AI Services"]
+    AOAIemb["Azure OpenAI - Text Embedding 3"]
+    AOAIgpt["Azure OpenAI GPT-4/GPT-4o - Generation & RAG"]
+    AILang["Azure AI Language - Sentiment / Key Phrases / PII"]
+    Translator["Azure Translator - Multilingual"]
+  end
+
+  subgraph Infra["Infrastructure"]
+    Orchestrator["Azure Functions / Container Apps / AKS - RAG Orchestrator"]
+    KeyVault["Azure Key Vault"]
+    Monitor["Azure Monitor & App Insights"]
+    APIM["API Management / Front Door"]
+  end
+
+  %% Request path
+  UI --> APIM --> Orchestrator
+  Orchestrator --> KeyVault
+  Orchestrator --> PG
+  Orchestrator --> AOAIgpt
+  Orchestrator --> AILang
+  Orchestrator --> Translator
+
+  %% Ingestion
+  BLOB --> Orchestrator
+  Orchestrator --> AOAIemb --> PG
+
+  %% Retrieval
+  UI --> Orchestrator
+  Orchestrator --> PG
+  Orchestrator --> AOAIgpt
+
+  %% Observability
+  Orchestrator --> Monitor
+  AOAIgpt --> Monitor
+  PG --> Monitor
+
+  %% Outputs
+  AOAIgpt --> UI
+  AILang --> Orchestrator
+  Translator --> Orchestrator
+```
+
 
 ```mermaid
 flowchart LR
