@@ -9,6 +9,8 @@ This demo showcases how you can **chat with your private data securely** using t
 - **Azure AI Services** – Easily integrate **Large Language Models (LLMs)** and cognitive services for natural language understanding, sentiment analysis, and PII detection.
 - **pgvector** – Enables **vector similarity search** for semantic queries, making your database AI-ready.
 
+<h4>Current Legacy Design: Unoptimized AI Service Costs</h4>
+
 ```mermaid
 flowchart LR
   subgraph Client
@@ -63,6 +65,8 @@ flowchart LR
   AILang --> Orchestrator
   Translator --> Orchestrator
 ```
+
+<h4>Optimized Design: AI Services with Precomputed Embeddings and Caching</h4>
 
 
 ```mermaid
