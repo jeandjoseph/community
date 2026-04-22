@@ -1,0 +1,36 @@
+#Basic Prompts
+
+1. “Summarize + Action Plan” Prompt
+Prompt: “Summarize the last 10 unread emails from my project folder, highlight any deadlines or decisions I need to make, and draft a prioritized action list I can copy into my planner.”
+
+Why it impresses: Copilot pulls context across multiple emails, extracts commitments, and turns chaos into a clean, actionable plan.
+
+2. “Rewrite for Tone + Audience” Prompt
+Prompt: “Rewrite this email to sound confident, concise, and executive‑ready. Keep the key message, but make it more persuasive and remove unnecessary details.”
+Why it impresses: Shows how Copilot adapts tone, clarity, and professionalism instantly — a huge win for business users.
+
+3. “Draft From Scattered Notes” Prompt
+Prompt: “Using the notes below, draft a polished follow‑up email to the client summarizing what we agreed on, next steps, and what we need from them before Friday.” (Paste messy notes underneath during the demo.)
+
+Why it impresses: Copilot transforms rough, unstructured text into a clean, client‑ready message — a real “wow” moment.
+
+4. “Draft to send meeting invite” Prompt
+Use the context from my current email thread to draft a professional message proposing a meeting with the customer. Check my calendar for availability next week and provide three different dates, each with a specific time that fits my schedule. Provide a polished email draft asking the customer to confirm their preferred option by replying to this thread.
+
+
+#Advance Prompts
+1. Multi‑Threaded Insight Extraction Across a Project
+Prompt: “Analyze all emails from the last 30 days related to the ‘Data Modernization Initiative.’ Identify the major themes, risks, blockers, and any conflicting information between stakeholders. Then draft a concise briefing I can send to leadership with recommended next steps.”
+
+Why it’s advanced: Copilot performs cross‑thread analysis, resolves contradictions, and produces an executive‑ready briefing — something that normally takes hours.
+
+2. Generate a Decision‑Ready Comparison From Email Attachments
+Prompt: “Review all attachments in the last 5 emails from the vendor shortlist. Create a comparison summary highlighting pricing, scope, timelines, assumptions, and red flags. Then draft a recommendation email I can send to procurement.”
+
+Why it’s advanced: Copilot reads attachments, extracts structured data, and synthesizes it into a decision framework plus a ready‑to‑send email.
+
+3. Turn a Chaotic Inbox Into a Strategic Weekly Plan
+Prompt: “Scan my inbox for any tasks, commitments, or follow‑ups I owe this week. Group them by project, estimate urgency, and create a weekly execution plan with priorities, dependencies, and suggested deadlines. Draft it in a format I can paste into Planner or OneNote.”
+
+Why it’s advanced: Copilot becomes a personal operations assistant — extracting obligations, organizing them, and producing a structured plan.
+

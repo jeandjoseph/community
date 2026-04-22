@@ -1,0 +1,44 @@
+Prompt v1:
+Create a presentation where I talk about how I trained my own dogs.
+
+Prompt v2:
+I’ll share how I trained my own dogs, starting with a quick intro about me and the pups you’ll meet. I’ll explain why I chose to train them myself—saving money, strengthening our bond, and solving specific behavior issues—along with the simple philosophy I followed: positive reinforcement, consistency, and clear routines.
+
+Then I’ll highlight the key commands I taught, the biggest challenges I faced, and the tools and resources that helped. I’ll show before‑and‑after progress, wrap up with practical tips attendees can use right away, and end with a Q&A. The deck uses warm colors, dog‑themed visuals, and minimal text across 10–12 friendly, easy‑to-follow slides.
+
+Prompt v3:
+{animalPlural} = dogs
+{animalNicknamePlural} = pups
+{motivations} = saving money, strengthening our bond, and solving specific behavior issues
+{trainingPhilosophy} = positive reinforcement, consistency, and clear routines
+{visualStyle} = warm colors, animal‑themed visuals
+{slideCount} = 10–12
+
+I’ll share how I trained my own {animalPlural}, starting with a quick intro about me and the {animalNicknamePlural} you’ll meet. I’ll explain why I chose to train them myself—{motivations}—along with the simple philosophy I followed: {trainingPhilosophy}.
+Then I’ll highlight the key skills or commands I taught, the biggest challenges I faced, and the tools and resources that helped. I’ll show before‑and‑after progress, wrap up with practical tips attendees can use right away, and end with a Q&A. The deck uses {visualStyle} and minimal text across {slideCount} friendly, easy‑to‑follow slides.
+
+Prompt v4:
+{animalPlural} = cats
+{animalNicknamePlural} = kitties
+{motivations} = improving household harmony, reducing anxiety behaviors, and encouraging healthy enrichment
+{trainingPhilosophy} = clicker training, environmental enrichment, and predictable routines
+{visualStyle} = soft warm colors, cat‑themed visuals
+{slideCount} = 10–12
+
+Prompt Using Those Parameters
+I’ll share how I trained my own {animalPlural}, starting with a quick intro about me and the {animalNicknamePlural} you’ll meet. I’ll explain why I chose to train them myself—{motivations}—along with the simple philosophy I followed: {trainingPhilosophy}.
+
+Then I’ll highlight the key skills or commands I taught, the biggest challenges I faced, and the tools and resources that helped. I’ll show before‑and‑after progress, wrap up with practical tips attendees can use right away, and end with a Q&A. The deck uses {visualStyle} and minimal text across {slideCount} friendly, easy‑to‑follow slides.
+
+Prompt v4: Just for API Call
+{
+  "animalPlural": "dogs",
+  "animalNicknamePlural": "pups",
+  "motivations": "saving money, strengthening our bond, and solving specific behavior issues",
+  "trainingPhilosophy": "positive reinforcement, consistency, and clear routines",
+  "visualStyle": "warm colors and dog-themed visuals",
+  "slideCount": "10–12"
+}
+I’ll share how I trained my own {animalPlural}, starting with a quick intro about me and the {animalNicknamePlural} you’ll meet. I’ll explain why I chose to train them myself—{motivations}—along with the simple philosophy I followed: {trainingPhilosophy}.
+Then I’ll highlight the key skills or commands I taught, the biggest challenges I faced, and the tools and resources that helped. I’ll show before‑and‑after progress, wrap up with practical tips attendees can use right away, and end with a Q&A. The deck uses {visualStyle} and minimal text across {slideCount} friendly, easy‑to‑follow slides.
+

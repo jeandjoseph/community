@@ -1,0 +1,102 @@
+##Note, file can be found here to donwload: https://github.com/jeandjoseph/community/tree/main/Analytics/VibeCoding/csv-file
+Prompt 1
+# Create `SalesHistoriesData` Table
+
+Turn this dataset into a table named **SalesHistoriesData** on a new sheet titled **SalesData**, using the header row and inferring data types automatically. Treat all empty values as null.
+
+Prompt 2
+# Data‑Quality Review of `SalesHistoriesData`
+
+Using the **SalesHistoriesData** table, act as a data‑quality analyst and review the dataset for potential issues that could impact business decisions.  
+The dataset contains **50 rows** of sales data.
+
+## Step 1 — Identify Data‑Quality Issues
+Evaluate the dataset for the following categories of anomalies:
+
+- **Misspelled Product Names**  
+- **Inconsistent Region Casing**  
+- **Invalid or Inconsistent Date Formats**  
+- **Non‑Numeric Values in Numeric Fields**  
+- **Impossible Values** (e.g., Quantity = 0)  
+- **Any Additional Anomalies** detected during analysis
+
+## Step 2 — Generate a Tabular Report
+Create a clear, structured report with the following columns:
+
+- **Potential Column Anomaly**  
+- **Anomaly Description**  
+- **SaleID**  
+- **Detected Issue**
+
+For each issue, list:
+- The **SaleID**  
+- The **column name**  
+- The **problematic value**  
+- A brief explanation of **why it is an issue**
+
+## Canonical Reference Lists
+Use the following canonical values during validation:
+
+- **Product List:**  (Laptop Pro 15, Laptop Air 13, Monitor 27in, Monitor 24in, Keyboard Wireless, Mouse Wireless, Headset Pro)
+
+- **Region List:**  (East, West, North, South)
+
+After completing the analysis, create a new sheet named salesDataQualityIssuesFound and store the results in a table also named salesDataQualityIssuesFound.
+
+Prompt 3:
+# Data Cleaning and Standardization from `salesDataQualityIssuesFound`
+
+Using the data‑quality issues previously identified in the **salesDataQualityIssuesFound** table, clean and standardize the entire 50‑row dataset.
+
+## Step 1 — Apply Standardization Rules Across All Rows
+- Standardize **ProductName** values using the canonical product list, applying fuzzy matching for close variants.  
+- Normalize **Region** values to title case and restrict them to: **East, West, North, South**.  
+- Convert all **SaleDate** values to the **YYYY‑MM‑DD** format; flag or remove rows with dates that cannot be corrected.  
+- Convert **Quantity** and **UnitPrice** to numeric values; impute or remove invalid or missing entries.  
+- Validate **SaleID** integrity by detecting impossible or duplicate IDs.  
+- Investigate and correct any additional anomalies not covered by the canonical lists.
+
+## Step 2 — Return the Cleaned Dataset
+After applying all corrections, return the fully cleaned dataset as a table named **SalesProcessedData** on a new sheet titled **Sales Histories Cleaned Dataset**, ensuring:
+- Standardized values  
+- Consistent formatting  
+- A fully validated schema
+
+Prompt 4
+# Sales Visualizations from `SalesHistoriesData`
+
+## Step 1 — Total Quantity Sold by Product
+Using the **SalesHistoriesData** table, analyze the dataset and generate a bar chart showing the **total Quantity sold by ProductName**.  
+Ensure that product names appear in canonical order.
+
+## Step 2 — Sales Trend Over Time
+Create a line chart showing the **sales trend over time** by:
+- Grouping rows by **SaleDate**
+- Aggregating either **total Quantity** or **total Revenue (Quantity × UnitPrice)**
+- Ensuring all dates are sorted chronologically
+
+## Output
+Place both charts on a new sheet named **Sales Visualizations** and format them clearly for presentation.
+
+
+Prompt 5
+
+# Sales Analysis from `SalesProcessedData`
+
+## Step 1 — Compute Metrics
+Read the cleaned Excel table named **`SalesProcessedData`**.
+
+For each **ProductName** and **Region**, calculate:
+- Total Quantity Sold  
+- Total Revenue, computed as **Quantity × UnitPrice**  
+- Return an animated bar chart where each frame represents a different Region, shown in descending order
+
+## Step 2 — Total Revenue by Product Across Regions
+- Group the data by **Region** and **ProductName**  
+- Aggregate **Total Revenue (Quantity × UnitPrice)**  
+- Return an animated column chart or line chart where each frame represents a different Region, shown in descending order
+
+## Output
+Save the final aggregated results in a new sheet named **`sales by region`**.
+
+
