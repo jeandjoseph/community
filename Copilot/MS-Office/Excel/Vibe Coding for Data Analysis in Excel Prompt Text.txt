@@ -1,4 +1,4 @@
-##Note, file can be found here to donwload: https://github.com/jeandjoseph/community/tree/main/Analytics/VibeCoding/csv-file
+##Note, file can be found here to donwload: https://github.com/jeandjoseph/community/blob/main/Analytics/VibeCoding/csv-file/sales_history_with_typos.csv
 Prompt 1
 # Create `SalesHistoriesData` Table
 
