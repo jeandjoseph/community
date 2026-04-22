@@ -1,0 +1,105 @@
+# Step 1: read csv file
+Using PySpark, read the CSV file located at Files/csv/sales/sales_history_with_typos.csv from the Lakehouse and load it into a DataFrame named df_detect_typos.
+
+When reading the file:
+- Detect the schema automatically
+- Treat all empty values as null (nullValue="")
+- Ensure the header row is used
+- Infer data types where possible
+- After loading the dataset, return the first 5 rows using 
+
+
+# Step 2: Only Perform Data Quality Check and store into table
+Using the dataset sales_history_with_typos.csv that is already loaded into a DataFrame named df_detect_typos, you will act as a data exploratory analyst to review the dataset for potential data-quality issues that could impact business decisions. The dataset contains 50 rows of sales data. Store the report file into a table called sales_data_quality_rpt in the lake house
+
+Your task is to generate a clear, tabular report with the following columns:
+- Potential Column Anomaly
+- Anomaly Description
+- SaleID
+- Detected Issue
+
+The report should identify all rows with potential problems.
+Issues to check for include:
+- Misspelled product names
+- Inconsistent region casing
+- Invalid or inconsistent date formats
+- Non-numeric values in numeric columns
+- Impossible values (e.g., quantity = 0)
+- Any other anomalies you detect
+
+For each issue, list the SaleID, column name, problematic value, and a short explanation of why it is an issue.
+
+After the report, recommend next steps to clean and standardize the dataset.
+
+Canonical Product List (clean):  
+Laptop Pro 15, Laptop Air 13, Monitor 27in, Monitor 24in, Keyboard Wireless, Mouse Wireless, Headset Pro
+
+Canonical Region List (clean):  
+East, West, North, South
+
+Canonical Date Format:  
+YYYY-MM-DD
+
+# Step 3: Perform Data Quality Check, Clean and store the cleaned data intoo table
+
+Using the data quality issues previously identified in df_detect_typos, please clean and standardize the entire 50-row dataset and return the fully corrected DataFrame. Apply the following cleanup rules consistently across all rows:
+
+- Standardize product names using the canonical product list; apply fuzzy matching or lookup logic for close matches.
+- Normalize region names to title case and restrict values to the canonical region list (East, West, North, South).
+- Convert all dates to the YYYY-MM-DD format using proper date parsing; flag or remove rows with invalid dates if they cannot be corrected.
+- Convert Quantity and UnitPrice to numeric types; impute or remove rows with invalid or missing numeric values.
+- Validate SaleID integrity by detecting impossible or duplicate SaleIDs; retain only valid and unique records.
+- Investigate and correct any additional anomalies not covered by the canonical lists, documenting the fixes applied.
+
+After applying all corrections, return the fully cleaned 50-row dataset as a DataFrame with standardized values, consistent formatting, and a validated schema. Then save the cleaned dataset as a table named product_sales_history in the Lakehouse. Also provide a short summary describing the transformations performed and any rows that required special handling.
+
+# Step 4: Data Visulazation
+Using PySpark, query the cleaned product_sales_history table from the Lakehouse and load it into a DataFrame named df_sales_clean.
+After loading the data, create two visualizations to help display key sales insights from the dataset.
+Use PySpark for all querying and transformations, and use Python visualization libraries — specifically matplotlib and seaborn — to generate the charts.
+
+📊 Chart 1 – Sales Quantity by Product (Bar Chart using Matplotlib/Seaborn):
+- Group by ProductName
+- Aggregate total Quantity sold
+- Display the results as a bar chart using matplotlib or seaborn
+- Ensure product names appear in canonical order if possible
+
+📈 Chart 2 – Sales Trend Over Time (Line Chart using Matplotlib/Seaborn)
+- Group by SaleDate
+- Aggregate total Quantity or total revenue (Quantity * UnitPrice)
+- Display the results as a line chart using matplotlib or seaborn
+- Ensure dates are sorted chronologically
+
+Return the PySpark code, the resulting DataFrame preview, and both visualizations.
+Use display(df_sales_clean) for the DataFrame preview, and use Python plotting cells for the charts.
+
+
+# Step 5: Animated Data Visualization
+Using PySpark, query the cleaned product_sales_history table from the Lakehouse and load it into a DataFrame named df_sales_clean.
+
+After loading the data, compute the following metrics for each product and region:
+- Total Quantity sold
+- Total revenue (Quantity * UnitPrice)
+
+Use PySpark for all querying and transformations and do not display the rows.
+
+Next, create animated visualizations using Python.
+Use one of the following animation-capable libraries:
+- plotly.express (recommended for interactive animations)
+- or matplotlib.animation.FuncAnimation
+
+Animated Chart 1 – Total Quantity by Product Across Regions:
+- Group by Region and ProductName
+- Aggregate total Quantity
+- Create an animated bar chart where each frame represents a different Region
+- Ensure product names appear in canonical order if possible
+
+Animated Chart 2 – Total Revenue by Product Across Regions
+- Group by Region and ProductName
+- Aggregate total revenue (Quantity * UnitPrice)
+- Create an animated bar chart or line chart where each frame represents a different Region
+- Use either Plotly Express (animation_frame="Region") or Matplotlib’s animation module
+
+Return:
+- The PySpark query code
+- Both animated visualizations rendered in the notebook
