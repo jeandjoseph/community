@@ -7,11 +7,11 @@
                          ┌──────────────────────────────────────────┐
                          │        ENTERPRISE COPILOT STUDIO ALM      │
                          └──────────────────────────────────────────┘
-
+      _________________________________________________________________________
       ┌───────────────────────────────┐      ┌───────────────────────────────┐
       │         DEVELOPMENT            │      │           MONITORING           │
       └───────────────────────────────┘      └───────────────────────────────┘
-
+      _________________________________________________________________________
       ┌───────────────────────────────┐       ┌───────────────────────────────┐
       │  Copilot Studio (Maker)       │       │  Power Platform Admin Center   │
       │  - Build agents               │       │  - Audit logs                  │
@@ -33,11 +33,11 @@
       │  - Access policies            │       │  - Sensitive data movement      │
       └───────────────────────────────┘       └───────────────────────────────┘
 
-
+      _________________________________________________________________________
       ┌───────────────────────────────┐      ┌───────────────────────────────┐
       │     DEPLOYMENT PIPELINE       │      │           GOVERNANCE           │
       └───────────────────────────────┘      └───────────────────────────────┘
-
+      _________________________________________________________________________
       ┌───────────────────────────────┐       ┌───────────────────────────────┐
       │  Power Platform Pipelines     │       │  Power Platform Admin Center   │
       │  - Dev → Test → Prod          │       │  - DLP policies                │
@@ -57,10 +57,10 @@
 
 # Ultra‑Concise Summary
 
-| Area        | PPAC                                      | Power Apps                               | Purview                                      |
-|-------------|--------------------------------------------|--------------------------------------------|-----------------------------------------------|
-| Development | Environments, DLP, settings                | Build solutions, flows, tables, Agents            | Classify & protect data                       |
-| Monitoring  | Capacity, audit logs                       | Flow runs, solution health                 | Data access & compliance                      |
-| Deployment  | Pipelines, roles, managed solutions        | Solution packaging & dependencies          | Validate data governance in Test/Prod         |
-| Governance  | Security, DLP, Managed Environments        | ALM structure, connector compliance        | DSPM, sensitivity labels, Zero Trust          |
+| Area        | Copilot Studio                                          | PPAC                                  | Power Apps                            | Purview                                   |
+|-------------|---------------------------------------------------------|---------------------------------------|---------------------------------------|-------------------------------------------|
+| Development | Agent authoring, topics, plugins, knowledge sources     | Environments, DLP, settings           | Build solutions, flows, tables        | Classify & protect data                   |
+| Monitoring  | Agent analytics, session tracking, CSAT, transcripts    | Capacity, audit logs                  | Flow runs, solution health            | Data access & compliance                  |
+| Deployment  | Solution export, Git integration, env variables, connection refs | Pipelines, roles, managed solutions   | Solution packaging & dependencies     | Validate data governance in Test/Prod     |
+| Governance  | Authentication, channel security, agent sharing controls | Security, DLP, Managed Environments   | ALM structure, connector compliance   | DSPM, sensitivity labels, Zero Trust      |
 
