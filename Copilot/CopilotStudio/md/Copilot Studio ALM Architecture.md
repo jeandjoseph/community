@@ -1,4 +1,4 @@
-# Copilot Studio ALM Architecture (One‑Page Diagram)
+# Copilot Studio ALM Architecture
 - The Copilot Studio ALM Architecture delivers clear, enterprise‑grade structure by showing exactly how development, monitoring, deployment, and governance responsibilities are distributed across Copilot Studio, Power Apps, Power Platform Admin Center, and Microsoft Purview.
 - Its value is that it removes ambiguity: makers know where to build and package agents, admins know where to enforce security and DLP, pipeline owners know how solutions move from Dev → Test → Prod, and compliance teams see how Purview governs data access and RAG sources.
 - By visualizing these roles in one unified view, the architecture helps organizations scale Copilot Studio safely, maintain consistent governance, and ensure every agent is deployed with reliability, traceability, and compliance built in from day one.
@@ -53,4 +53,14 @@
       │  - Env variable values        │       │  - DSPM for RAG sources         │
       └───────────────────────────────┘       └───────────────────────────────┘
 ```
+
+
+# Ultra‑Concise Summary
+
+| Area        | PPAC                                      | Power Apps                               | Purview                                      |
+|-------------|--------------------------------------------|--------------------------------------------|-----------------------------------------------|
+| Development | Environments, DLP, settings                | Build solutions, flows, tables, Agents            | Classify & protect data                       |
+| Monitoring  | Capacity, audit logs                       | Flow runs, solution health                 | Data access & compliance                      |
+| Deployment  | Pipelines, roles, managed solutions        | Solution packaging & dependencies          | Validate data governance in Test/Prod         |
+| Governance  | Security, DLP, Managed Environments        | ALM structure, connector compliance        | DSPM, sensitivity labels, Zero Trust          |
 
