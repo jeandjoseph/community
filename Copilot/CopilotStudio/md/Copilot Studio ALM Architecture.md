@@ -1,4 +1,8 @@
 # Copilot Studio ALM Architecture (One‑Page Diagram)
+- The Copilot Studio ALM Architecture delivers clear, enterprise‑grade structure by showing exactly how development, monitoring, deployment, and governance responsibilities are distributed across Copilot Studio, Power Apps, Power Platform Admin Center, and Microsoft Purview.
+- Its value is that it removes ambiguity: makers know where to build and package agents, admins know where to enforce security and DLP, pipeline owners know how solutions move from Dev → Test → Prod, and compliance teams see how Purview governs data access and RAG sources.
+- By visualizing these roles in one unified view, the architecture helps organizations scale Copilot Studio safely, maintain consistent governance, and ensure every agent is deployed with reliability, traceability, and compliance built in from day one.
+
 ```text
                          ┌──────────────────────────────────────────┐
                          │        ENTERPRISE COPILOT STUDIO ALM      │
