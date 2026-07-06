@@ -1,0 +1,20 @@
+## Prompt 1:
+
+Create a one-page project proposal that is intentionally poorly written. It should include weak arguments, grammatical mistakes, typographical errors, missing key sections, vague recommendations, and unclear objectives.
+
+
+
+## Prompt 2:
+List out very concisely all weak arguments, grammatical mistakes, typographical errors, missing key sections, vague recommendations, and unclear objectives from this document.
+
+
+
+## Prompt 3:
+Act as a senior management consultant. Review this document, identify all issues, and rewrite the entire document as a concise, executive-ready proposal. Do not explain the issues or your reasoning. Focus only on delivering a polished, professional, and well-structured final version.
+
+
+## Prompt 4:
+Act as a PMO and executive review board. Evaluate this project proposal based on its business value, strategic alignment, and likelihood of success. Do not assess grammar, spelling, formatting, or writing quality. Present your findings in a KPI assessment table with the following columns: KPI Category, Score (1-10), Key Observations, Business Impact, and Recommendations. Evaluate the proposal against Executive Summary Effectiveness, Problem Definition, Objective Clarity, Strategic Alignment, Business Value, Expected Benefits, Stakeholder Alignment, Feasibility, Risk Management, Scope Definition, Deliverables, Success Metrics, ROI Potential, Implementation Readiness, and Overall Project Readiness. Conclude with an overall score, top strengths, top weaknesses, key risks, and a final executive recommendation. Keep all observations concise, objective, and business-focused.
+
+
+
