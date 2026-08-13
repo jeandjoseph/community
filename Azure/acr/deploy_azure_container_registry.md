@@ -2,6 +2,24 @@
 
 > Azure Container Registry allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments.   
 
+### ACR SKU Comparison
+| Feature | Basic | Standard | Premium |
+| --- | --- | --- | --- |
+| Webhooks | ✅ | ✅ | ✅ |
+| Geo-replication | ❌ | ❌ | ✅ |
+| Private Link | ❌ | ❌ | ✅ |
+| Content Trust | ❌ | ❌ | ✅ |
+| CMK Support | ❌ | ❌ | ✅ |
+| Throughput | Low | Medium | High |
+| Storage | 10 GB | 100 GB | 500 GB |
+
+### SKU Guidance
+| SKU | Description | Best For |
+| --- | --- | --- |
+| Basic | Low-cost, limited throughput | Dev/test |
+| Standard | Balanced performance | Production |
+| Premium | Enterprise features | Geo-distributed workloads |
+
 
 ### Azure Container Registry — Core Terms (Concise Definitions)
  - **registry**: A private, Azure‑hosted container registry that stores and manages your container images and artifacts.
