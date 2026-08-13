@@ -71,12 +71,14 @@ az acr create \
 | AKS / App Services pulling images | AcrPull | **Pro:** Least-privilege for production. **Con:** Cannot push images. |
 | Admin operations | Contributor | **Pro:** Full registry management. **Con:** Broad access; not ideal for automation. |
 
-### 4. Lets your local Docker client authenticate to your registry so it can push images.
+### 4. Login to ACR
+ - Lets your local Docker client authenticate to your registry so it can push images.
 ```bash
 az acr login --name acrdemosvc
 ```
 
 #### 4.1 Get ACR Login Server
+ - This command retrieves the registry’s login server URL details so you can reference it when tagging and pushing images.
 ```bash
 az acr show \
   --name acrdemosvc \
@@ -87,35 +89,35 @@ az acr show \
 #### 5. Tag Local Image for ACR
  - This step prepares your local Docker image for upload by assigning it a tag that points to your Azure Container Registry. Tagging the image with the ACR login server ensures Docker knows exactly where the image should be pushed next.
 ```bash
-docker tag casacloud/nodejstemplate:v1.0.0 \
-  acrdemosvc.azurecr.io/nodejstemplate:v1.0.0
+docker tag casacloud/demotemplate:v1.0.0 \
+  acrdemosvc.azurecr.io/demotemplate:v1.0.0
 ```
 
 #### 6. Push Image to ACR
  - Uploads the tagged image to your Azure Container Registry.
 ```bash
-docker push acrdemosvc.azurecr.io/nodejstemplate:v1.0.0
+docker push acrdemosvc.azurecr.io/demotemplate:v1.0.0
 ````
 
 #### 6.1 Verify Image in ACR
- - Shows all repositories, which can get noisy and slow in large registries.
+ - This command lists all repositories stored in your Azure Container Registry, giving you a full inventory of every image collection inside acrdemosvc. Can get noisy and slow in large registries.
 ```bash
 az acr repository list \
   --name acrdemosvc
 ```
 
-#### 6.2
+#### 6.2 Returns detailed metadata for a single repository
 ```bash
 az acr repository show \
   --name acrdemosvc \
-  --repository nodejstemplate
+  --repository demotemplate
 ```
 
-#### 6.3
+#### 6.3 lists all tags associated with this repository
 ```bash
 az acr repository show-tags \
   --name acrdemosvc \
-  --repository nodejstemplate
+  --repository demotemplate
 ```
 
 
