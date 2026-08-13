@@ -120,12 +120,27 @@ az acr repository show-tags \
   --repository demotemplate
 ```
 
+#### 7 creates a new version tag
+- Tagging lets you version your image — whether you changed the image or not — so you can reliably reference, push, and deploy specific builds using consistent tag names.
+```bash
+docker tag casacloud/nodejstemplate:v1.0.0 \
+  acrdemosvc.azurecr.io/demotemplate:v1.0.1
+```
 
+#### 7.1 Push Your Latest Image Version to Azure Container Registry
+- This command uploads the v1.0.1 image for demotemplate to your Azure Container Registry, making that version available for pulls, deployments, and CI/CD workflows.
+```bash
+docker push acrdemosvc.azurecr.io/demotemplate:v1.0.1
+```
 
-
-
-
-
+#### 8 Delete Entire Repository
+- This command permanently deletes the entire demotemplate repository from your Azure Container Registry, including all tags, all image versions, and all digests stored under that repository. It’s a full repository removal, not a single‑tag delete.
+- Deleting an ACR repository is irreversible, wipes all image versions and tags, can break any deployment that pulls demotemplate:*, offers no safety prompt in automation, and requires manually re‑tagging and re‑pushing images to restore it.
+```bash
+az acr repository delete \
+  --name acrdemosvc \
+  --repository demotemplate
+```
 
 
 
