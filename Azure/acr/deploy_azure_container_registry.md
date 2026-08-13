@@ -1,4 +1,4 @@
-# Provision Azure Container Registry (ACR)
+# Provision & Push Local Containers to Azure Container Registry (ACR)
 
 > Azure Container Registry allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments.   
 
