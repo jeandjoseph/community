@@ -164,6 +164,7 @@ docker images
 ```
 
 #### 6. Push Image to ACR
+- Note: If the command fails with a CorrelationId error, assign AcrPush (or AcrPull + AcrPush) to your user ID. After assigning the role, return to your terminal, sign in to Azure again, log in to your ACR instance, and then re‑run the command below.
  - Uploads the tagged image to your Azure Container Registry.
 ```bash
 docker push <acr-endpoint>/<image-name>:<tag>
