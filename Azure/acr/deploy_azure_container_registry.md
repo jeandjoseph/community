@@ -198,8 +198,16 @@ az acr repository show-tags \
 
 #### 7 creates a new version tag
 - Tagging lets you version your image — whether you changed the image or not — so you can reliably reference, push, and deploy specific builds using consistent tag names.
+  - Keep the same old tag: v1.0.0
+  - Use the new tag: v1.0.1 to push the same local Docker image into ACR and simulate how we can perform version updates.
 ```bash
-docker tag casacloud/nodejstemplate:v1.0.0 \
+docker tag <local-image-name>:<tag> \
+  <acr-endpoint>/<image-name>:<new-tag>
+```
+
+example:
+```bash
+docker tag acr_demo_image:v1.0.0 \
   acrdemosvc.azurecr.io/acr_demo_image:v1.0.1
 ```
 
