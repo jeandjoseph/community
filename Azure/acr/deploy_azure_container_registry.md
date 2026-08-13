@@ -158,6 +158,11 @@ docker tag acr_demo_image:v1.0.0 \
   acrdemosvc.azurecr.io/acr_demo_image:v1.0.0
 ```
 
+verify the image is ready to push to acr
+```bash
+docker images
+```
+
 #### 6. Push Image to ACR
  - Uploads the tagged image to your Azure Container Registry.
 ```bash
