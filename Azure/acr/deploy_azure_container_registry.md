@@ -56,6 +56,12 @@ You will perform the following steps:
 
 
 ### Create Registry Name: **acrdemosvc**
+
+#### Login
+```bash
+az login
+```
+
 ---
 
 ### 1. Create Resource Group
