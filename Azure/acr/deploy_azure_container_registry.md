@@ -57,7 +57,20 @@ You will perform the following steps:
 
 ### Create Registry Name: **acrdemosvc**
 
-#### Login
+##### **Pre-Requisites**
+- If you do not already have a Docker container, click here to create one. Return to this section once your container is ready.
+- Convert your container into a Docker image using the command below:
+
+```bash
+docker commit [container id/name] acr_demo_image:latest
+```
+
+##### Confirm that image is created
+```bash
+docker images
+```
+
+#### Login to azure portal from your terminal
 ```bash
 az login
 ```
