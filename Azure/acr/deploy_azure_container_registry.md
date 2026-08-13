@@ -2,7 +2,23 @@
 
 > Azure Container Registry allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments.   
 
-Registry Name: **acrdemosvc**
+
+### Azure Container Registry — Core Terms (Concise Definitions)
+ - **registry**: A private, Azure‑hosted container registry that stores and manages your container images and artifacts.
+ - **repository**: A logical collection inside the registry that groups related images (usually by application or service name).
+ - **tag**: A version label applied to an image within a repository, used to identify and pull specific builds.
+ - **digest**: A unique, immutable SHA‑256 hash that identifies the exact image contents; guarantees you’re pulling the precise image.
+ - **artifact**: Any OCI‑compliant object stored in ACR, including container images, Helm charts, SBOMs, signatures, and other supply‑chain assets.
+ - **manifest**: Metadata describing an image or artifact — layers, configuration, and references — used by ACR and runtimes to fetch the correct content.
+ - **loginServer**: The fully qualified registry endpoint (e.g., `acrdemosvc.azurecr.io`) used for tagging, pushing, and pulling images.
+ - **scope map**: A permission set defining what actions tokens can perform on specific repositories (push, pull, delete, etc.).
+ - **token**: A lightweight credential tied to a scope map, used for fine‑grained access control without exposing full registry permissions.
+ - **import**: An operation that copies an image or artifact into your registry from another registry without pulling it locally.
+ - **retention policy**: Rules that automatically clean up old or untagged images to reduce storage usage and keep the registry tidy.
+ - **webhooks**: Notifications triggered by registry events (push, delete, etc.) that integrate with CI/CD or automation workflows.
+
+
+### Lets Registry Name: **acrdemosvc**
 
 ## What to Expect (Step-by-Step Flow)
 
@@ -59,6 +75,59 @@ az acr create \
 ```bash
 az acr login --name acrdemosvc
 ```
+
+#### 4.1 Get ACR Login Server
+```bash
+az acr show \
+  --name acrdemosvc \
+  --query loginServer \
+  --output tsv
+````
+
+#### 5. Tag Local Image for ACR
+ - This step prepares your local Docker image for upload by assigning it a tag that points to your Azure Container Registry. Tagging the image with the ACR login server ensures Docker knows exactly where the image should be pushed next.
+```bash
+docker tag casacloud/nodejstemplate:v1.0.0 \
+  acrdemosvc.azurecr.io/nodejstemplate:v1.0.0
+```
+
+#### 6. Push Image to ACR
+ - Uploads the tagged image to your Azure Container Registry.
+```bash
+docker push acrdemosvc.azurecr.io/nodejstemplate:v1.0.0
+````
+
+#### 6.1 Verify Image in ACR
+ - Shows all repositories, which can get noisy and slow in large registries.
+```bash
+az acr repository list \
+  --name acrdemosvc
+```
+
+#### 6.2
+```bash
+az acr repository show \
+  --name acrdemosvc \
+  --repository nodejstemplate
+```
+
+#### 6.3
+```bash
+az acr repository show-tags \
+  --name acrdemosvc \
+  --repository nodejstemplate
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
