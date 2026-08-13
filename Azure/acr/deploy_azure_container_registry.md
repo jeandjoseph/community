@@ -166,8 +166,13 @@ docker images
 #### 6. Push Image to ACR
  - Uploads the tagged image to your Azure Container Registry.
 ```bash
-docker push acrdemosvc.azurecr.io/acr_demo_image:v1.0.0
+docker push <acr-endpoint>/<image-name>:<tag>
 ````
+
+example:
+```bash
+docker push acrdemosvc.azurecr.io/acr_demo_image:v1.0.0
+```
 
 #### 6.1 Verify Image in ACR
  - This command lists all repositories stored in your Azure Container Registry, giving you a full inventory of every image collection inside acrdemosvc. Can get noisy and slow in large registries.
