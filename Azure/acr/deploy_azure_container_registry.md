@@ -36,9 +36,9 @@
  - **webhooks**: Notifications triggered by registry events (push, delete, etc.) that integrate with CI/CD or automation workflows.
 
 
-### Lets Registry Name: **acrdemosvc**
+# Live Demo Scripts
 
-## What to Expect (Step-by-Step Flow)
+### What to Expect (Step-by-Step Flow)
 
 This demo walks you through the complete workflow of creating an Azure Container Registry, pushing images to it, and integrating it with an AKS cluster using managed identities.  
 You will perform the following steps:
@@ -54,6 +54,8 @@ You will perform the following steps:
 9. **Attach ACR to AKS using managed identities**  
 10. **Understand AKS control-plane vs kubelet identities**
 
+
+### Create Registry Name: **acrdemosvc**
 ---
 
 ### 1. Create Resource Group
