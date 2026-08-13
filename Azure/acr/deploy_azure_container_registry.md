@@ -162,7 +162,8 @@ az acr repository delete \
   --repository demotemplate
 ```
 
-
+#### Summarization
+- Retrieve your login server, tag your image with a proper version, push it to ACR, verify repositories and tags, and delete only with extreme caution because removal is irreversible and breaks all dependent deployments.
 
 
 
