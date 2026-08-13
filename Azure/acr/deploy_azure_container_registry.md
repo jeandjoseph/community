@@ -211,10 +211,22 @@ docker tag acr_demo_image:v1.0.0 \
   acrdemosvc.azurecr.io/acr_demo_image:v1.0.1
 ```
 
+check if its created successfully:
+```bash
+docker images
+```
+
 #### 7.1 Push Your Latest Image Version to Azure Container Registry
 - This command uploads the v1.0.1 image for acr_demo_image to your Azure Container Registry, making that version available for pulls, deployments, and CI/CD workflows.
 ```bash
 docker push acrdemosvc.azurecr.io/acr_demo_image:v1.0.1
+```
+
+verify:
+```bash
+az acr repository show-tags \
+  --name acrdemosvc \
+  --repository acr_demo_image
 ```
 
 #### 8 Delete Entire Repository
