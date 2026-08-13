@@ -81,6 +81,11 @@ az acr create \
   --location eastus
 ```
 
+#### check if its created successfully
+```bash
+az acr list -o table 
+```
+
 ### 3. Understanding ACR RBAC roles / permissions (Microsoft Learn‑aligned)
 
 | **Role** | **Login** | **Push** | **Pull** |
