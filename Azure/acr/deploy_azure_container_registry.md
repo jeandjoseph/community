@@ -60,9 +60,14 @@ You will perform the following steps:
 ##### **Pre-Requisites**
 - If you do not already have a Docker container, click here to create one. Return to this section once your container is ready.
 - Convert your container into a Docker image using the command below:
-
+- tag: v1.0.0
 ```bash
-docker commit [container id/name] acr_demo_image:latest
+docker commit <container-name> <image-name>:<tag>
+```
+
+example:
+```bash
+docker commit local_postgresql_acr_demo acr_demo_image:v1.0.0
 ```
 
 ##### Confirm that image is created
@@ -130,10 +135,26 @@ az acr show \
   --output tsv
 ````
 
+#### 4.2 Get all docker images
+```bash
+docker images
+```
+
 #### 5. Tag Local Image for ACR
  - This step prepares your local Docker image for upload by assigning it a tag that points to your Azure Container Registry. Tagging the image with the ACR login server ensures Docker knows exactly where the image should be pushed next.
+
+- Before running the tagging command, record the following:
+  - Docker Image Name:
+  - ACR Login Server (endpoint):
+  - Tag: v1.0.0
 ```bash
-docker tag casacloud/demotemplate:v1.0.0 \
+docker tag <image-name>:<tag> \
+  <acr-endpoint>/<image-name>:<tag>
+```
+
+example:
+```bash
+docker tag demotemplate:v1.0.0 \
   acrdemosvc.azurecr.io/demotemplate:v1.0.0
 ```
 
