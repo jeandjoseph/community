@@ -127,3 +127,17 @@ az acr show \
   --output tsv
 ````
 
+#### 5 Build the Container Image Using ACR Tasks
+Ensure you are in the correct folder context before running the build. For example:
+```bash
+cd C:\CommunityDemos\local-postgresql-old\container
+```
+
+Build the Container Image Using ACR Tasks
+```bash
+az acr build ^
+    --registry acrdemosvc ^
+    --image acr_psql_demo_img:v1.0.0 ^
+    .
+```
+
