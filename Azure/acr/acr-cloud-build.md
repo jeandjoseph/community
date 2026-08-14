@@ -141,3 +141,12 @@ az acr build ^
     .
 ```
 
+#### 5.1 Verify the image in the registry
+```bash
+az acr repository list --name acrdemosvc --output table
+```
+
+#### 5. List Image Tags in Your ACR Repository
+```bash
+az acr repository show-tags --name acrdemosvc --repository acr_psql_demo_img --output table
+```
