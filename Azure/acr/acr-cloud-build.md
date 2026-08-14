@@ -114,6 +114,7 @@ az acr list -o table
 
 ### 4. Login to ACR
  - Lets your local Docker client authenticate to your registry so it can push images.
+ - This step is optional
 ```bash
 az acr login --name acrdemosvc
 ```
