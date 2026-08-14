@@ -62,3 +62,82 @@ You will perform the following steps:
 
 
 ### Create Registry Name: **acrdemosvc**
+
+##### **Pre-Requisites**
+- If you do not already have a Docker container, [click here to create one](https://github.com/jeandjoseph/llm-agent-demos/tree/main/postgresql/local_ai_postgres_rag_demo/container). Return to this section once your container is ready.
+- Convert your container into a Docker image using the command below:
+- tag: v1.0.0
+```bash
+docker commit <container-name> <image-name>:<tag>
+```
+
+example:
+```bash
+docker commit local_postgresql_acr_demo acr_demo_image:v1.0.0
+```
+
+##### Confirm that image is created
+```bash
+docker images
+```
+
+#### Login to azure portal from your terminal
+```bash
+az login
+```
+
+---
+
+### 1. Create Resource Group
+
+```bash
+az group create \
+  --name rg-acr-demo \
+  --location eastus
+```
+
+### 2. Create Azure Container Registry
+```bash
+az acr create \
+  --resource-group rg-acr-demo \
+  --name acrdemosvc \
+  --sku Standard \
+  --location eastus
+```
+
+#### check if its created successfully
+```bash
+az acr list -o table 
+```
+
+### 3. Understanding ACR RBAC roles / permissions (Microsoft Learn‑aligned)
+
+| **Role** | **Login** | **Push** | **Pull** |
+| --- | --- | --- | --- |
+| **AcrPull** | Yes | No | Yes |
+| **AcrPush** | Yes | Yes | Yes |
+| **AcrDelete** | Yes | No | No |
+| **Contributor / Owner** | Yes | Yes | Yes |
+
+### 3.1 Choosing the Right ACR Role for Each Workflow
+| **Scenario** | **Recommended Role** | **Pros / Cons** |
+|-------------|----------------------|------------------|
+| CI/CD pipelines | AcrPush | **Pro:** Supports push+pull for builds. **Con:** Too permissive for runtime-only workloads. |
+| AKS / App Services pulling images | AcrPull | **Pro:** Least-privilege for production. **Con:** Cannot push images. |
+| Admin operations | Contributor | **Pro:** Full registry management. **Con:** Broad access; not ideal for automation. |
+
+### 4. Login to ACR
+ - Lets your local Docker client authenticate to your registry so it can push images.
+```bash
+az acr login --name acrdemosvc
+```
+
+#### 4.1 Get ACR Login Server
+ - This command retrieves the registry’s login server URL details so you can reference it when tagging and pushing images.
+```bash
+az acr show \
+  --name acrdemosvc \
+  --query loginServer \
+  --output tsv
+````
+
