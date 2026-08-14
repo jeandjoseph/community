@@ -140,7 +140,7 @@ Build the Container Image Using ACR Tasks
 ```bash
 az acr build ^
     --registry acrdemosvc ^
-    --image acr_psql_demo_img:v1.0.0 ^
+    --image acr_web_demo:v1.0.0 ^
     .
 ```
 
@@ -152,9 +152,9 @@ az acr repository list --name acrdemosvc --output table
 
 Show Metadata for a Specific Image in Your ACR Registry
 ```bash
-az acr repository show \
-    --name acrdemosvc \
-    --image acr_psql_demo_img:v1.0.0
+az acr repository show ^
+    --name acrdemosvc ^
+    --image acr_web_demo:v1.0.0
 ```
 
 #### 6.2 List Image Tags in Your ACR Repository
@@ -163,7 +163,7 @@ az acr repository show \
 ```bash
 az acr repository show-tags ^
    --name acrdemosvc ^
-   --repository acr_psql_demo_img ^
+   --repository acr_web_demo ^
    --output table
 ```
 
@@ -173,7 +173,7 @@ az acr repository show-tags ^
 ```bash
 az acr manifest list-metadata ^
    --registry acrdemosvc ^
-   --name acr_psql_demo_img ^
+   --name acr_web_demo ^
    --output table
 ```
 
@@ -182,8 +182,8 @@ az acr manifest list-metadata ^
  - Each run captures the full lifecycle of a build or execution operation — including logs, timestamps, status, and the task definition used.
  - Where images and manifests describe what you built, task runs describe how it was built and what happened during execution.
 ```bash
-az acr task list-runs \
-    --registry acrdemosvc \
+az acr task list-runs ^
+    --registry acrdemosvc ^
     --output table
 ```
 
@@ -194,7 +194,7 @@ az acr task list-runs \
 ```bash
 az acr run ^
     --registry acrdemosvc ^
-    --cmd "acrdemosvc.azurecr.io/acr_psql_demo_img:v1.0.0" ^
+    --cmd "acrdemosvc.azurecr.io/acr_web_demo:v1.0.0" ^
     /dev/null
 ```
 
