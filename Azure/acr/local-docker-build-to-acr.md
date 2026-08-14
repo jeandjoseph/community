@@ -1,6 +1,14 @@
 # Provision & Push Local Containers to Azure Container Registry (ACR)
 
-> Azure Container Registry allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments.   
+> Azure Container Registry allows you to build, store, distribution, and manage container images and artifacts in a private registry for all types of container deployments.   
+
+ACR knows how to:
+ - store container images, OCI artifacts, and Helm charts
+ - version, tag, and manage repositories
+ - run cloud builds using ACR Tasks (az acr build)
+ - serve images to Azure services (AKS, ACI, ACA, App Service, Functions)
+
+
 
 ### ACR SKU Comparison
 | Feature | Basic | Standard | Premium |
