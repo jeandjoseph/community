@@ -131,7 +131,7 @@ az acr show ^
 #### 5 Build the Container Image Using ACR Tasks
 Ensure you are in the correct folder context before running the build. For example:
 ```bash
-cd C:^CommunityDemos^local-postgresql-old^container
+cd C:\CommunityDemos\webcontainer
 ```
 
 Build the Container Image Using ACR Tasks
