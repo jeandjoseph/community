@@ -134,6 +134,8 @@ cd C:^CommunityDemos^local-postgresql-old^container
 ```
 
 Build the Container Image Using ACR Tasks
+ - An ACR Build is Azure Container Registry’s built‑in capability to build container images directly inside the registry, without requiring Docker or a local container engine.
+ - Instead of building locally and pushing, ACR performs the build in the cloud, using your Dockerfile and source context.
 ```bash
 az acr build ^
     --registry acrdemosvc ^
@@ -142,11 +144,21 @@ az acr build ^
 ```
 
 #### 6 Verify the image in the registry
+List All Repository Names in Your ACR Registry
 ```bash
 az acr repository list --name acrdemosvc --output table
 ```
 
+Show Metadata for a Specific Image in Your ACR Registry
+```bash
+az acr repository show \
+    --name acrdemosvc \
+    --image acr_psql_demo_img:v1.0.0
+```
+
 #### 6.2 List Image Tags in Your ACR Repository
+ - Image tags are human‑friendly labels that point to a specific image version inside a repository.
+ - They make it easy to identify, pull, and deploy different builds of the same container image.
 ```bash
 az acr repository show-tags ^
    --name acrdemosvc ^
@@ -155,6 +167,8 @@ az acr repository show-tags ^
 ```
 
 #### 6.3 Show Manifest Metadata
+ - Manifest metadata is the detailed information Azure Container Registry stores about a specific image manifest.
+ - A manifest represents one version of an image (for example: acr_psql_demo_img:v1.0.0), and the metadata describes everything Azure tracks about that version.
 ```bash
 az acr manifest list-metadata ^
    --registry acrdemosvc ^
@@ -163,6 +177,9 @@ az acr manifest list-metadata ^
 ```
 
 #### 7 View build history and lock a production image
+ - ACR Task Runs are the execution records generated every time you run an Azure Container Registry Task.
+ - Each run captures the full lifecycle of a build or execution operation — including logs, timestamps, status, and the task definition used.
+ - Where images and manifests describe what you built, task runs describe how it was built and what happened during execution.
 ```bash
 az acr task list-runs \
     --registry acrdemosvc \
