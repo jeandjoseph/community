@@ -63,6 +63,10 @@ You will perform the following steps:
 
 ### Create Registry Name: **acrdemosvc**
 
+##### **Pre-Requisites**
+- [Click here to download the local Docker container bundle, then return to this section](https://github.com/jeandjoseph/llm-agent-demos/tree/main/postgresql/local_ai_postgres_rag_demo/container).
+- Run this script to enable this resource provider: `az provider register --namespace Microsoft.ContainerRegistry`
+
 #### Login to azure portal from your terminal
 ```bash
 az login
