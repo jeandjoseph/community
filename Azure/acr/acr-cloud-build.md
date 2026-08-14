@@ -77,17 +77,17 @@ az login
 ### 1. Create Resource Group
 
 ```bash
-az group create \
-  --name rg-acr-demo \
+az group create ^
+  --name rg-acr-demo ^
   --location eastus
 ```
 
 ### 2. Create Azure Container Registry
 ```bash
-az acr create \
-  --resource-group rg-acr-demo \
-  --name acrdemosvc \
-  --sku Standard \
+az acr create ^
+  --resource-group rg-acr-demo ^
+  --name acrdemosvc ^
+  --sku Standard ^
   --location eastus
 ```
 
@@ -121,16 +121,16 @@ az acr login --name acrdemosvc
 #### 4.1 Get ACR Login Server
  - This command retrieves the registry’s login server URL details so you can reference it when tagging and pushing images.
 ```bash
-az acr show \
-  --name acrdemosvc \
-  --query loginServer \
+az acr show ^
+  --name acrdemosvc ^
+  --query loginServer ^
   --output tsv
 ````
 
 #### 5 Build the Container Image Using ACR Tasks
 Ensure you are in the correct folder context before running the build. For example:
 ```bash
-cd C:\CommunityDemos\local-postgresql-old\container
+cd C:^CommunityDemos^local-postgresql-old^container
 ```
 
 Build the Container Image Using ACR Tasks
@@ -148,5 +148,8 @@ az acr repository list --name acrdemosvc --output table
 
 #### 5. List Image Tags in Your ACR Repository
 ```bash
-az acr repository show-tags --name acrdemosvc --repository acr_psql_demo_img --output table
+az acr repository show-tags ^
+   --name acrdemosvc ^
+   --repository acr_psql_demo_img ^
+   --output table
 ```
