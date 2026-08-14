@@ -67,6 +67,7 @@ You will perform the following steps:
 
 ##### **Pre-Requisites**
 - If you do not already have a Docker container, [click here to create one](https://github.com/jeandjoseph/llm-agent-demos/tree/main/postgresql/local_ai_postgres_rag_demo/container). Return to this section once your container is ready.
+- Make sure to enable this resource provider: `az provider register --namespace Microsoft.ContainerRegistry`
 - Convert your container into a Docker image using the command below:
 - tag: v1.0.0
 ```bash
