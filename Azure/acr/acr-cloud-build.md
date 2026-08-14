@@ -63,24 +63,6 @@ You will perform the following steps:
 
 ### Create Registry Name: **acrdemosvc**
 
-##### **Pre-Requisites**
-- If you do not already have a Docker container, [click here to create one](https://github.com/jeandjoseph/llm-agent-demos/tree/main/postgresql/local_ai_postgres_rag_demo/container). Return to this section once your container is ready.
-- Convert your container into a Docker image using the command below:
-- tag: v1.0.0
-```bash
-docker commit <container-name> <image-name>:<tag>
-```
-
-example:
-```bash
-docker commit local_postgresql_acr_demo acr_demo_image:v1.0.0
-```
-
-##### Confirm that image is created
-```bash
-docker images
-```
-
 #### Login to azure portal from your terminal
 ```bash
 az login
