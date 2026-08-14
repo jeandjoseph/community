@@ -161,3 +161,15 @@ az acr manifest list-metadata ^
    --name acr_psql_demo_img ^
    --output table
 ```
+
+#### 7 Run the image with ACR Tasks
+- Notice how you were able to connect to PostgreSQL and execute commands directly inside the container by using ACR Tasks:
+- This approach allows you to run ad‑hoc commands inside your container image without deploying it to a compute service.
+- It’s useful for quick validation, smoke tests, and one‑off administrative operations.
+```bash
+az acr run ^
+    --registry acrdemosvc ^
+    --cmd "acrdemosvc.azurecr.io/acr_psql_demo_img:v1.0.0" ^
+    /dev/null
+```
+
