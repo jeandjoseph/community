@@ -1,1 +1,57 @@
-test
+# Provision & Push Local Containers to Azure Container Registry (ACR)
+
+> Azure Container Registry allows you to build, store, and manage container images and artifacts in a private registry for all types of container deployments.   
+
+### ACR SKU Comparison
+| Feature | Basic | Standard | Premium |
+| --- | --- | --- | --- |
+| Webhooks | ✅ | ✅ | ✅ |
+| Geo-replication | ❌ | ❌ | ✅ |
+| Private Link | ❌ | ❌ | ✅ |
+| Content Trust | ❌ | ❌ | ✅ |
+| CMK Support | ❌ | ❌ | ✅ |
+| Throughput | Low | Medium | High |
+| Storage | 10 GB | 100 GB | 500 GB |
+
+### SKU Guidance
+| SKU | Description | Best For |
+| --- | --- | --- |
+| Basic | Low-cost, limited throughput | Dev/test |
+| Standard | Balanced performance | Production |
+| Premium | Enterprise features | Geo-distributed workloads |
+
+
+### Azure Container Registry — Core Terms (Concise Definitions)
+ - **registry**: A private, Azure‑hosted container registry that stores and manages your container images and artifacts.
+ - **repository**: A logical collection inside the registry that groups related images (usually by application or service name).
+ - **tag**: A version label applied to an image within a repository, used to identify and pull specific builds.
+ - **digest**: A unique, immutable SHA‑256 hash that identifies the exact image contents; guarantees you’re pulling the precise image.
+ - **artifact**: Any OCI‑compliant object stored in ACR, including container images, Helm charts, SBOMs, signatures, and other supply‑chain assets.
+ - **manifest**: Metadata describing an image or artifact — layers, configuration, and references — used by ACR and runtimes to fetch the correct content.
+ - **loginServer**: The fully qualified registry endpoint (e.g., `acrdemosvc.azurecr.io`) used for tagging, pushing, and pulling images.
+ - **scope map**: A permission set defining what actions tokens can perform on specific repositories (push, pull, delete, etc.).
+ - **token**: A lightweight credential tied to a scope map, used for fine‑grained access control without exposing full registry permissions.
+ - **import**: An operation that copies an image or artifact into your registry from another registry without pulling it locally.
+ - **retention policy**: Rules that automatically clean up old or untagged images to reduce storage usage and keep the registry tidy.
+ - **webhooks**: Notifications triggered by registry events (push, delete, etc.) that integrate with CI/CD or automation workflows.
+
+
+# Live Demo Scripts
+
+### What to Expect (Step-by-Step Flow)
+
+This demo walks you through the complete workflow of creating an Azure Container Registry, pushing images to it, and integrating it with an AKS cluster using managed identities.  
+You will perform the following steps:
+
+1. **Create a resource group**  
+2. **Create an Azure Container Registry (ACR)**  
+3. **Understand ACR RBAC roles**  
+4. **Prepare your Dockerfile and source context**  
+5. **Build the container image using az acr build (cloud build)**  
+6. **Inspect repositories and tags inside ACR**  
+7. **Manage tags and delete repositories**  
+8. **Review ACR SKU options**  
+9. **Attach ACR to AKS using managed identities**
+
+
+### Create Registry Name: **acrdemosvc**
