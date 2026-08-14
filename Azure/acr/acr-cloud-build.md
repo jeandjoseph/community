@@ -188,7 +188,7 @@ az acr task list-runs ^
 ```
 
 #### 8 Run the image with ACR Tasks
-- Notice how you were able to connect to PostgreSQL and execute commands directly inside the container by using ACR Tasks:
+- Notice how you were able to connect to directly inside the container by using ACR Tasks:
 - This approach allows you to run ad‑hoc commands inside your container image without deploying it to a compute service.
 - It’s useful for quick validation, smoke tests, and one‑off administrative operations.
 ```bash
